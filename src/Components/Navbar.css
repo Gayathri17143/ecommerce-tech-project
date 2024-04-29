@@ -1,0 +1,11 @@
+
+.navbar {
+    /* background: none!important; */
+    box-shadow: none!important;
+}
+
+@media(max-width:991px){
+    .d-block {
+        width: 30%;
+    }
+}

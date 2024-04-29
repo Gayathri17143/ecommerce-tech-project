@@ -1,0 +1,35 @@
+ 
+  
+  .subscriber-form-container {
+    /* background-color: #ffffff; */
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .thank-you-message {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #815050;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  
+  
