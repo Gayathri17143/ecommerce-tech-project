@@ -1,0 +1,17 @@
+ .small img {
+     width: 100%;
+     height: auto;
+     margin: 0 auto;
+ }
+
+ ul {
+     list-style-type: none;
+ }
+
+ p {
+     padding-bottom: 0px;
+ }
+
+ h4 {
+     padding-left: 40px;
+ }

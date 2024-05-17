@@ -16,21 +16,26 @@ import ImageGrid from "./ImageGrid";
  import Product from "../Components/Product";
  import Newsletter from "../Components/Newsletter";
  import Productpage from "../Components/Productpage";
-
+// import { Checkbox } from "@material-ui/core";
+ 
 export default function App() {
 
       
       return (
             <>
- 
+                  
                   <Bannercarousel />
                   <ImageGrid />
                   {/* <Product/> */}
                    <Productpage/>
+                   <Brandlogos/>
+                   <Services/>
+                 
                   <FeaturedProducts/>
-                  <Brandlogos/>
-                  <Services/>
                   <TrendingProducts />
+                 
+                  
+               
                   <Newsletter/>
             </>
       );

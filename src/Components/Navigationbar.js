@@ -278,13 +278,13 @@ function App() {
     };
     return (
         <Navbar
-            bg="light"
+            
             expand="lg"
             variant="light">
             <Navbar.Brand href="#home">
                 <h1
                     style={{
-                        color: "green",
+                        color: "#5b5f97!important",
                     }}>
 
                 </h1>

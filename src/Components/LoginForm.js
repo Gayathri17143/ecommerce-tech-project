@@ -58,6 +58,7 @@ const LoginForm = ({ switchForm }) => {
                 <Button type="submit" variant="contained" color="primary" fullWidth>
                     SignUp
                 </Button>
+                
                 <Typography mt={2}>
                     Don't have an account?{' '}
                     <Link href="#" onClick={() => switchForm('register')}>

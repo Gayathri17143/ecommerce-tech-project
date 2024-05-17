@@ -28,20 +28,27 @@ const Footer = () => {
       <div className="foot-item">
         <ul className="menu">
           <li>
-            <a>
+            <a href="/about">
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">About Us</div>
-              </i>
+              </i> 
+            </a> 
+            <a href="/contact">
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Contact Us</div>
-              </i>
+              </i> 
+            </a> 
+            <a>
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Careers</div>
               </i>
-             
+            </a> 
+            <a>
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Security</div>
-              </i>
+              </i> 
+            </a> 
+            <a href="/privacypolicy">
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Privacy Policy</div>
               </i>
@@ -56,18 +63,25 @@ const Footer = () => {
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Payment</div>
               </i>
+              </a>
+              <a>
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Shipping</div>
               </i>
+            </a>
+            <a href="/termsandconditions">
               <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Terms Of Use</div>
-              </i>
+                <div className="foot-text">Terms and Conditions</div>
+              </i></a>
+              <a>
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Cancellation & Returns</div>
-              </i>
+              </i></a>
+              <a>
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Sitemap</div>
-              </i>
+              </i></a>
+              <a href="/faq">
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">FAQ</div>
               </i>
@@ -91,13 +105,9 @@ const Footer = () => {
         </ul>
 
         <div className="foot-text1">
-          TechConnect Internet Private Limited,
-          Buildings Alyssa, Begonia &
-          Clove Embassy Tech Village,
-          Outer Ring Road,
-          Devarabeesanahalli Village,
-          Bengaluru, 560103,
-          Karnataka, India
+          TechConnect Internet Private Limited, Buildings Alyssa, Begonia &
+          Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
+          Village, Bengaluru, 560103, Karnataka, India
         </div>
         <div className="foot-text2">
           © 2023 TechConnect Theme. All Rights Reserved.

@@ -12,10 +12,10 @@ import { Container } from 'react-bootstrap';
 const SimpleCarousel = () => {
 
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         speed: 500,
-
+        arrows:false,
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
@@ -50,7 +50,7 @@ const SimpleCarousel = () => {
 
     return (
         <Container>
-            <h3 style={{paddingLeft:'7%' ,fontWeight:'600',color:"#000"}}>Trending Gadgets</h3>
+            <h3>Trending Gadgets</h3>
             <Slider {...settings} style={{padding:'20px'}} >
                 <div >
                     <a href="https://example.com/page1">

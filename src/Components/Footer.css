@@ -11,6 +11,9 @@
   .bold{
     font-size: 17px;
   }
+  a{
+    text-decoration: none!important;
+  }
   .menu{
     /* display: grid;
     grid-template-columns: repeat(12,auto);

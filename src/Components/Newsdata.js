@@ -29,6 +29,21 @@ export const News = [
       "date": "2024-04-11",
       "image": earbuds
     },
+    {
+      "title": "  under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
+      "date": "2024-04-11",
+      "image": realme
+    },
+    {
+      "title": " OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
+      "date": "2024-04-11",
+      "image": apple
+    },
+    {
+      "title": " TWS earbuds in India under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro",
+      "date": "2024-04-11",
+      "image": samsung
+    },
     
   ]
 

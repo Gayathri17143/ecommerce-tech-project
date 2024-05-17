@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './UserProfile.css'; // Import CSS file for styling
+import { Container } from 'react-bootstrap';
 
 function App() {
   // State variables to hold form data
@@ -26,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="container" style={{margin:'3%'}}>
+    <Container style={{padding:"30px"}}>
       <h3>Personal Information</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -60,7 +61,7 @@ function App() {
         </div>
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </Container>
   );
 }
 

@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
 import Input from "../Components/Input";
 import products from "../db/data";
 import { FaCartShopping } from "react-icons/fa6";
 import Button from "../Components/Button";
 import { Link } from "react-router-dom";
+
+import Pagination from "../Components/Pagination";
 // PriceFilter component
 const PriceFilter = ({ handlePriceChange }) => {
   const [selectedRange, setSelectedRange] = useState("");
@@ -19,12 +22,19 @@ const PriceFilter = ({ handlePriceChange }) => {
   return (
     <div>
       <div className="">
-        <h2 className="sidebar-title price-title">Price</h2>
+        <h2 style={{textAlign:"left"}} className="sidebar-title price-title">Price</h2>
 
         <label className="sidebar-label-container">
-          <input onChange={handleRadioChange} type="radio" value="" name="priceRange" style={{ marginRight: "5px" }} />
+          <input
+            onChange={handleRadioChange}
+            type="radio"
+            value=""
+            name="priceRange"
+            style={{ marginRight: "5px" }}
+          />
           <span className="checkmark"></span>All
-        </label><br />
+        </label>
+        <br />
 
         <Input
           handleChange={handleRadioChange}
@@ -32,7 +42,6 @@ const PriceFilter = ({ handlePriceChange }) => {
           title="₹5,000 - ₹9,999"
           id="range1"
           name="priceRange"
-
         />
         <br />
         <Input
@@ -64,7 +73,6 @@ const PriceFilter = ({ handlePriceChange }) => {
           name="priceRange"
         />
       </div>
-
     </div>
   );
 };
@@ -75,15 +83,33 @@ const Recommended = ({ handleFilterChange }) => {
     handleFilterChange(selectedFilter);
   };
 
-
   return (
     <>
       <div>
-        <div className="recommended-flex" style={{ padding: "30px", textAlign: "right" }}>
-          <Button onClickHandler={handleSelectChange} value="" title="All Products" />
-          <Button onClickHandler={handleSelectChange} value="5Gmobiles" title="5G Mobiles" />
-          <Button onClickHandler={handleSelectChange} value="lowtohigh" title="Low to High" />
-          <Button onClickHandler={handleSelectChange} value="hightolow" title="High to Low" />
+        <div
+          className="recommended-flex"
+          style={{ padding: "30px", textAlign: "right" }}
+        >
+          <Button
+            onClickHandler={handleSelectChange}
+            value=""
+            title="All Products"
+          />
+          <Button
+            onClickHandler={handleSelectChange}
+            value="5Gmobiles"
+            title="5G Mobiles"
+          />
+          <Button
+            onClickHandler={handleSelectChange}
+            value="lowtohigh"
+            title="Low to High"
+          />
+          <Button
+            onClickHandler={handleSelectChange}
+            value="hightolow"
+            title="High to Low"
+          />
         </div>
       </div>
     </>
@@ -91,40 +117,56 @@ const Recommended = ({ handleFilterChange }) => {
 };
 
 const Products = ({ products }) => {
-
-
   return (
-    <section >
-
+    <section>
       <Row>
-
         {products.map((product, index) => (
-
           <Col xs={12} md={4} lg={4} key={index} style={{ padding: "10px" }}>
-            <section className="card-container" style={{ marginLeft: "0rem", border: "1px solid #ccc", borderRadius: "10px" }}>
-              <img src={product.img} alt={product.title} className="" height="300px" width="100%" style={{ objectFit: 'contain' }} />
-              <div className="card-details" style={{ padding: "10px" }} >
-                <Link to={`/Hero/${product.id}`}>
-                  <h6 className="card-title" style={{ fontSize: "16px", color: "#000000", fontWeight: "600" }}>{product.title}</h6>  </Link>
-                <section className="card-reviews">
-                  {product.star}  {product.star}  {product.star}
-
+            <section
+              className="card-container"
+              style={{
+                marginLeft: "0rem",
+                border: "1px solid #ccc",
+                borderRadius: "10px",
+              }}
+            >
+              <img
+                src={product.img}
+                alt={product.title}
+                className=""
+                height="300px"
+                width="100%"
+                style={{ objectFit: "contain" }}
+              />
+              <div className="card-details" style={{ padding: "10px" }}>
+                <Link to={`/Details/${product.id}`}>
+                  <h6
+                    className="card-title"
+                    style={{
+                      fontSize: "18px",
+                      color: "#000000",
+                      fontWeight: "600",
+                      marginBottom:"20px"
+                    }}
+                  >
+                    {product.title}
+                  </h6>
+                </Link>
+                {/* <section className="card-reviews">
+                  {product.star} {product.star} {product.star}
                   <span className="total-reviews">{product.reviews}</span>
-                </section>
+                </section> */}
                 <section className="card-price">
                   <div className="price">
-
-                    <del>{product.prevPrice}</del> {product.Price}
+                  ₹ {product.Price}.00
                   </div>
-                  <div className="bag">
+                  {/* <div className="bag">
                     <FaCartShopping className="shop-icon" />
-                  </div>
+                  </div> */}
                 </section>
-
               </div>
             </section>
           </Col>
-
         ))}
       </Row>
     </section>
@@ -136,20 +178,20 @@ const App = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState(null);
 
-
-
   // Handle price change
   const handlePriceChange = (selectedRange) => {
     if (selectedRange) {
       const [minPrice, maxPrice] = selectedRange.split("-");
-      const filtered = products.filter(({ Price }) => Price >= parseInt(minPrice) && Price <= parseInt(maxPrice));
+      const filtered = products.filter(
+        ({ Price }) =>
+          Price >= parseInt(minPrice) && Price <= parseInt(maxPrice)
+      );
       setFilteredProducts(filtered);
     } else {
       // Reset filter if no range selected
       setFilteredProducts(products);
     }
   };
-
 
   // Handle filter change
   const handleFilterChange = (selectedFilter) => {
@@ -185,64 +227,77 @@ const App = () => {
       handleFilterChange(selectedFilter);
     };
 
-
-
     return (
-      <div style={{paddingTop:"20px"}}>
+      <div style={{ paddingTop: "20px" }}>
         <div>
-          <h2 className="sidebar-title color-title">Brands</h2>
+          <h2 style={{textAlign:"left"}} className="sidebar-title color-title">Brands</h2>
           <label className="sidebar-label-container">
-            <input onChange={handleSelectChange} type="radio" value="" name="test" style={{ marginRight: "5px" }} />
+            <input
+              onChange={handleSelectChange}
+              type="radio"
+              value=""
+              name="test"
+              style={{ marginRight: "5px" }}
+            />
             <span className="checkmark"></span>All
-          </label><br />
+          </label>
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="apple"
             title="Apple"
             name="test"
-          /> <br />
+          />{" "}
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="samsung"
             title="Samsung"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="oneplus"
             title="Oneplus"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="redmi"
             title="Redmi"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="realme"
             title="Realme"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="oppo"
             title="Oppo"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="vivo"
             title="Vivo"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="tecno"
             title="Tecno"
             name="test"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="nokia"
@@ -251,14 +306,20 @@ const App = () => {
           />
         </div>
 
-
-        <div style={{paddingTop:"20px"}}>
-          <h2 className="sidebar-title color-title">Colors</h2>
+        <div style={{ paddingTop: "20px" }}>
+          <h2 style={{textAlign:"left"}} className="sidebar-title color-title">Colors</h2>
           <label className="sidebar-label-container">
-            <input onChange={handleSelectChange} type="radio" value="" name="test1" style={{ marginRight: "5px" }} />
+            <input
+              onChange={handleSelectChange}
+              type="radio"
+              value=""
+              name="test1"
+              style={{ marginRight: "5px" }}
+            />
             <span className="checkmark all"></span>
             All
-          </label><br />
+          </label>
+          <br />
 
           <Input
             handleChange={handleSelectChange}
@@ -266,21 +327,24 @@ const App = () => {
             title="Black"
             name="test1"
             color="black"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="grey"
             title="Grey"
             name="test1"
             color="grey"
-          /><br />
+          />
+          <br />
           <Input
             handleChange={handleSelectChange}
             value="blue"
             title="Blue"
             name="test1"
             color="blue"
-          /><br />
+          />
+          <br />
 
           <Input
             handleChange={handleSelectChange}
@@ -288,7 +352,8 @@ const App = () => {
             title="Red"
             name="test1"
             color="red"
-          /><br />
+          />
+          <br />
 
           <Input
             handleChange={handleSelectChange}
@@ -296,7 +361,8 @@ const App = () => {
             title="Green"
             name="test1"
             color="green"
-          /><br />
+          />
+          <br />
 
           <label className="sidebar-label-container">
             <input
@@ -312,12 +378,25 @@ const App = () => {
             White
           </label>
         </div>
-
       </div>
     );
   };
 
+  const [coinsData, setCoinsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(6);
+  //   useEffect(async () => {
+  //     const response = await axios.get(
+  //         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+  //     );
 
+  //     setCoinsData(response.data);
+  // }, []);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = filteredProducts.slice(firstPostIndex, lastPostIndex);
+  const totalProducts = products.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div>
@@ -329,16 +408,23 @@ const App = () => {
           </Col>
           <Col xs={12} md={9} lg={9}>
             <Recommended handleFilterChange={handleFilterChange} />
-            <Products products={filteredProducts.length ? filteredProducts : products} />
+            <Products
+              products={filteredProducts.length ? currentPosts : totalProducts}
+            />
+
+            <Pagination
+              totalPosts={
+                filteredProducts.length
+                  ? filteredProducts.length
+                  : totalProducts.length
+              }
+              postsPerPage={postsPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
           </Col>
-
-
         </Row>
       </Container>
-
-
-
-
     </div>
   );
 };

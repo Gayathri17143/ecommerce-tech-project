@@ -7,7 +7,7 @@ import Banner3 from '../assets/iPhonebanner.jpg';
 const MyCarousel = () => {
     return (
         <Carousel>
-            <Carousel.Item>
+            {/* <Carousel.Item>
                 <Link href="/">
                     <img
                         className="d-block w-100"
@@ -16,7 +16,7 @@ const MyCarousel = () => {
                     />
                 </Link>
 
-            </Carousel.Item>
+            </Carousel.Item> */}
             <Carousel.Item>
                 <Link href="/">
                     <img

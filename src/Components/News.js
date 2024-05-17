@@ -5,10 +5,15 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 // import News from "../components/News";
 import {News } from '../Components/Newsdata';
+import Pagination from "../Components/Pagination";
 import { LinkContainer } from 'react-router-bootstrap';
 const NewsComponent = () => {
   const [news, setNews] = useState([]);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(3);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const totalProducts = News.slice(firstPostIndex, lastPostIndex);
   useEffect(() => {
     // Fetch news data from API
     fetch('')
@@ -40,7 +45,7 @@ const NewsComponent = () => {
       <h4>Recent News for Gadgets</h4>
       {/* <Slider {...settings}> */}
       <Row>
-        {News.map((item, index) => (
+        {totalProducts.map((item, index) => (
           <Col md={4} sm={6} xs={12} style={{padding:"20px"}}>
           <div className="news-item" key={index}>
             <Card style={{ width: '25rem' }}>
@@ -55,22 +60,14 @@ const NewsComponent = () => {
           </div>
           </Col>
         ))}
-         {News.map((item, index) => (
-          <Col md={4} sm={6} xs={12} style={{padding:"20px"}}>
-          <div className="news-item" key={index}>
-            <Card style={{ width: '25rem' }}>
-              <img src={item.image} alt={item.title} style={{width:"100%!important"}}/>
-              <Card.Body>
-              
-                <Card.Title style={{ fontSize: '18px' }}>{item.title}</Card.Title> 
-                <Card.Text>Date: {item.date}</Card.Text>
-                <LinkContainer to={'/NewsProductPage'}><button>View More</button></LinkContainer>
-              </Card.Body>
-            </Card>
-          </div>
-          </Col>
-        ))}
+         
         </Row>
+        <Pagination
+          totalPosts={News.length}
+          postsPerPage={postsPerPage}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       {/* </Slider> */}
     </Container>
   );
