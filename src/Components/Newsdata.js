@@ -44,6 +44,21 @@ export const News = [
       "date": "2024-04-11",
       "image": samsung
     },
+    {
+      "title": "Fire Boltt Oracle with LTE calling, 1.96-inch HD display launched in India: price, specifications",
+      "date": "2024-04-12",
+      "image": bolt
+    },
+    {
+      "title": "Best TWS earbuds in India under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
+      "date": "2024-04-11",
+      "image": earbuds
+    },
+    {
+      "title": "  under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
+      "date": "2024-04-11",
+      "image": realme
+    },
     
   ]
 

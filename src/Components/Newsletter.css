@@ -2,13 +2,16 @@
   
   .subscriber-form-container {
     /* background-color: #ffffff; */
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 5px;
-    margin: 20px;
+    /* margin: 20px; */
+    color: #fff;
   }
   
   .thank-you-message {
-    text-align: center;
+    /* text-align: center; */
+    color: '#fff';
+    font-size: 16px;
   }
   
   /* .form-group {
@@ -23,11 +26,11 @@
   }
   
   .btn-primary {
-    background-color: #007bff;
+    background-color: #33475c;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding:5px 15px;
     cursor: pointer;
   }
   

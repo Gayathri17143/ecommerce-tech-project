@@ -16,19 +16,19 @@ const SubscriberForm = () => {
 
   return (
     <div className="container"  >
-      <div className="row justify-content-center" style={{background:"rgb(211 215 219 / 41%)"}}>
-        <div className="col-md-6">
+      <div className=" "  >
+        <div className=" ">
           <div className="subscriber-form-container">
             {submitted ? (
               <div className="thank-you-message">
-                <h2>Thank you for subscribing!</h2>
+                <h4>Thank you for subscribing!</h4>
               </div>
             ) : (
               <>
-                <h2>Subscribe to Our Newsletter</h2>
+                <h4 style={{paddingLeft:"0px",fontSize:"20px", color:' #c9e7f9'}}>Subscribe to Our Newsletter</h4>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label style={{color:"#1976d2",fontSize:"20px"}} htmlFor="email">Email:</label>
                     <input
                       type="email"
                       className="form-control"

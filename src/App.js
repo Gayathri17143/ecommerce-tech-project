@@ -21,8 +21,8 @@ import Filter from "./Components/Filter"
 import Details from "./Components/Details";  
 import NotFound from "./Components/NotFound";
 import Video from "./Components/Video";
-import Form from "./Components/Form";
-import ShoppingCart from "./Components/Shoppingcart";
+import Check from "./Components/Check";
+import Shopcart from "./Components/Shopcart";
 // import {Provider } from 'react-redux'
 // import Shoppingcart from './Components/Shoppingcart'
 
@@ -39,9 +39,9 @@ export default function App() {
 
                         <Route exact path="/" element={<Home />} ></Route>
                         <Route path="/Details/:id" element={<Details/>} > </Route> 
-                        <Route path="/checkout" element={<Form/>} > </Route> 
+                        <Route path="/checkout" element={<Check/>} > </Route> 
                         <Route path="/smartphones" element={<Filter/>} ></Route>
-                        <Route path="/shoppingcart" element={<ShoppingCart/>} ></Route>
+                        <Route path="/shopcart" element={<Shopcart/>} ></Route>
                         <Route path="/news" element={<News/>} > </Route>
                         <Route path="/NewsProductPage" element={<NewsProductPage/>}></Route>
                         <Route path="/video" element={<Video/>}></Route>
@@ -55,14 +55,9 @@ export default function App() {
                         <Route exact path="*" element={<NotFound/>} ></Route>
                       
                   </Routes>
-                 
-
-
-                 
+                  
                   {/* <ResetPassword/> */}
-
-                 
-                   
+ 
                   <Footer />
 
             </Router>

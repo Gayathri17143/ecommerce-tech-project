@@ -49,12 +49,30 @@ const ProductList = () => {
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
+    {
+      id: 7,
 
+      description: "Description of Product 7",
+
+      videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
+    }, {
+      id: 8,
+
+      description: "Description of Product 8",
+
+      videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
+    }, {
+      id: 9,
+
+      description: "Description of Product 9",
+
+      videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
+    },
     // Add more products as needed
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const [postsPerPage, setPostsPerPage] = useState(6);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const totalProducts = product.slice(firstPostIndex, lastPostIndex);

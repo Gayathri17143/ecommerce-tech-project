@@ -9,7 +9,7 @@ const NotFound = () => {
         <section className='notFound'>
             <div className="container-fluid">
                 <div className='box'>
-                    <img src={NotFoundImg} />
+                    <img src={NotFoundImg} alt='not found'/>
                     <br /><br />
                     <h1>Page Not Found</h1>
                     <p>The link you clicked may be broken or the page may have been removed.

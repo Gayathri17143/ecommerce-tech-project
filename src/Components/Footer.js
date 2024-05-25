@@ -1,4 +1,5 @@
 import React from "react";
+import Newsletter from "./Newsletter";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -18,78 +19,10 @@ const Footer = () => {
               <i class="fa-regular fa-envelope">
                 <div className="foot-text">info@techconnect.com</div>
               </i>
-              {/* <i class="fa-regular fa-clock">
-                <div className="foot-text">Mon-Fri:10:00-18:00 PM</div>
-              </i> */}
+            
             </a>
           </li>
         </ul>
-      </div>
-      <div className="foot-item">
-        <ul className="menu">
-          <li>
-            <a href="/about">
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">About Us</div>
-              </i> 
-            </a> 
-            <a href="/contact">
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Contact Us</div>
-              </i> 
-            </a> 
-            <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Careers</div>
-              </i>
-            </a> 
-            <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Security</div>
-              </i> 
-            </a> 
-            <a href="/privacypolicy">
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Privacy Policy</div>
-              </i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="foot-item">
-        <ul className="menu">
-          <li>
-            <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Payment</div>
-              </i>
-              </a>
-              <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Shipping</div>
-              </i>
-            </a>
-            <a href="/termsandconditions">
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Terms and Conditions</div>
-              </i></a>
-              <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Cancellation & Returns</div>
-              </i></a>
-              <a>
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">Sitemap</div>
-              </i></a>
-              <a href="/faq">
-              <i class="fa-regular fa-arrow-right">
-                <div className="foot-text">FAQ</div>
-              </i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="foot-item">
         <ul className="icons">
           <li>
             <span className="bold">
@@ -103,7 +36,6 @@ const Footer = () => {
             </span>
           </li>
         </ul>
-
         <div className="foot-text1">
           TechConnect Internet Private Limited, Buildings Alyssa, Begonia &
           Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
@@ -112,6 +44,49 @@ const Footer = () => {
         <div className="foot-text2">
           © 2023 TechConnect Theme. All Rights Reserved.
         </div>
+      </div>
+      <div className="foot-item">
+        <ul className="menu">
+          <li>
+            <a href="/about">
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">About Us</div>
+              </i>
+            </a>
+            <a href="/contact">
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">Contact Us</div>
+              </i>
+            </a>
+
+            <a href="/privacypolicy">
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">Privacy Policy</div>
+              </i>
+            </a>
+            <a href="/termsandconditions">
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">Terms and Conditions</div>
+              </i>
+            </a>
+            
+            <a>
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">Sitemap</div>
+              </i>
+            </a>
+            <a href="/faq">
+              <i class="fa-regular fa-arrow-right">
+                <div className="foot-text">FAQ</div>
+              </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div className="foot-item">
+         
+        <Newsletter />
       </div>
     </div>
   );

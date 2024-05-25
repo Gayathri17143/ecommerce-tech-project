@@ -24,7 +24,7 @@ import Banner from "../assets/logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import ShoppingCart from "./Shoppingcart";
+// import ShoppingCart from "./Cartshop";
 // import { useHistory } from "react-router-dom";
 
 const pages = [
@@ -195,41 +195,41 @@ function ResponsiveAppBar() {
   useEffect(() => {
     localStorage.setItem("shopping-cart", JSON.stringify(productsInCart));
   }, [productsInCart]);
-  const addProductToCart = (product) => {
-    const newProduct = {
-      ...product,
-      count: 1,
-    };
-    setProducts([...productsInCart, newProduct]);
-    window.location.reload();
-  };
+  // const addProductToCart = (product) => {
+  //   const newProduct = {
+  //     ...product,
+  //     count: 1,
+  //   };
+  //   setProducts([...productsInCart, newProduct]);
+  //   window.location.reload();
+  // };
 
-  const onQuantityChange = (productId, count) => {
-    setProducts((oldState) => {
-      const productsIndex = oldState.findIndex((item) => item.id === productId);
-      if (productsIndex !== -1) {
-        oldState[productsIndex].count = count;
-      }
-      return [...oldState];
-    });
-  };
+  // const onQuantityChange = (productId, count) => {
+  //   setProducts((oldState) => {
+  //     const productsIndex = oldState.findIndex((item) => item.id === productId);
+  //     if (productsIndex !== -1) {
+  //       oldState[productsIndex].count = count;
+  //     }
+  //     return [...oldState];
+  //   });
+  // };
 
-  const onProductRemove = (product) => {
-    setProducts((oldState) => {
-      const productsIndex = oldState.findIndex(
-        (item) => item.id === product.id
-      );
-      if (productsIndex !== -1) {
-        oldState.splice(productsIndex, 1);
-      }
-      return [...oldState];
-    });
-  };
+  // const onProductRemove = (product) => {
+  //   setProducts((oldState) => {
+  //     const productsIndex = oldState.findIndex(
+  //       (item) => item.id === product.id
+  //     );
+  //     if (productsIndex !== -1) {
+  //       oldState.splice(productsIndex, 1);
+  //     }
+  //     return [...oldState];
+  //   });
+  // };
   return (
     <AppBar position="static" sx={{ background: "none", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-          <img className="d-block " src={Banner} alt="First slide" />
+         <a href="/"><img className="d-block" src={Banner} alt="First slide" /></a> 
 
           <Box
             sx={{
@@ -279,11 +279,12 @@ function ResponsiveAppBar() {
                   }}
                 />
               )}
-            />
+            />{" "}
             {isLoginned ? (
-              <button
+              <Button
                 className="btn shopping-cart-btn"
-                onClick={() => setCartVisible(true)}
+                href="/shopcart"
+                // onClick={() => setCartVisible(true)}
               >
                 <ShoppingCartOutlinedIcon
                   sx={{
@@ -300,17 +301,16 @@ function ResponsiveAppBar() {
                 {productsInCart.length > 0 && (
                   <span className="product-count">{productsInCart.length}</span>
                 )}
-              </button>
+              </Button>
             ) : null}
-            <ShoppingCart
-              visibilty={cartsVisibilty}
+            {/* <ShoppingCart
+              // visibilty={cartsVisibilty}
               products={productsInCart}
               count={onQuantityChange}
               onClose={() => setCartVisible(false)}
               onQuantityChange={onQuantityChange}
               onProductRemove={onProductRemove}
-            />
-
+            /> */}
             {isLoginned ? (
               <NotificationsActiveOutlinedIcon
                 sx={{
@@ -339,13 +339,11 @@ function ResponsiveAppBar() {
                             </div>
 
                         </Stack> */}
-
             <Dialog open={open} onClose={handleClose}>
               <DialogContent>
                 <LoginForm />
               </DialogContent>
             </Dialog>
-
             <Box sx={{ flexGrow: 0 }}>
               {isLoginned ? (
                 <>

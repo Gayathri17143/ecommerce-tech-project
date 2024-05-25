@@ -13,11 +13,11 @@ import Brandlogos from "./Brandlogos";
 import React from 'react';
 import ImageGrid from "./ImageGrid";
  import Services from "./Services";
- import Product from "../Components/Product";
+//  import Product from "../Components/Product";
  import Newsletter from "../Components/Newsletter";
  import Productpage from "../Components/Productpage";
 // import { Checkbox } from "@material-ui/core";
- 
+  
 export default function App() {
 
       
@@ -30,13 +30,13 @@ export default function App() {
                    <Productpage/>
                    <Brandlogos/>
                    <Services/>
-                 
+                  
                   <FeaturedProducts/>
                   <TrendingProducts />
                  
                   
                
-                  <Newsletter/>
+                  
             </>
       );
 }

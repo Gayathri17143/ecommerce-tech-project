@@ -4,7 +4,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Button } from "@mui/material";
 function ShoppingCart({
-  visibilty,
+
   products,
   onProductRemove,
   onClose,
@@ -19,12 +19,7 @@ function ShoppingCart({
   };
 
   return (
-    <div
-      className="modal"
-      style={{
-        display: visibilty ? "block" : "none",
-      }}
-    >
+
       <div className="shoppingCart">
         <div className="header">
           <h2>Shopping cart</h2>
@@ -86,7 +81,7 @@ function ShoppingCart({
           )} */}
         </div>
       </div>
-    </div>
+
   );
 }
 
