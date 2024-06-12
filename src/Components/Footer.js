@@ -4,7 +4,8 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="foot-container pad">
-      <div className="foot-item">
+     
+     <div className="foot-item">
         <ul className="menu">
           <li>
             <a>
@@ -27,7 +28,7 @@ const Footer = () => {
           <li>
             <span className="bold">
               Follow Us:
-              <a>
+              <a >
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-instagram"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -44,6 +45,10 @@ const Footer = () => {
         <div className="foot-text2">
           © 2023 TechConnect Theme. All Rights Reserved.
         </div>
+      </div>
+      <div className="foot-item">
+         
+        <Newsletter />
       </div>
       <div className="foot-item">
         <ul className="menu">
@@ -70,7 +75,7 @@ const Footer = () => {
               </i>
             </a>
             
-            <a>
+            <a href="/">
               <i class="fa-regular fa-arrow-right">
                 <div className="foot-text">Sitemap</div>
               </i>
@@ -83,11 +88,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      
-      <div className="foot-item">
-         
-        <Newsletter />
-      </div>
+    
     </div>
   );
 };

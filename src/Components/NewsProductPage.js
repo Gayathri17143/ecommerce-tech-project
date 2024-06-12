@@ -29,7 +29,42 @@ const TrendingNewsComponent = () => {
 
     fetchNews();
   }, []);
-
+  const NewsData = {
+    headlines: [
+      {
+        desc: "2024 Samsung Crystal 4K TV series with 4K upscaling, 3D surround sound, and more launched in India: price, features",
+        image: samsung,
+      },
+      {
+        desc: "Fire Boltt Oracle with LTE calling, 1.96-inch HD display launched in India: price, specifications",
+        image: bolt,
+      },
+      {
+        desc: "Best TWS earbuds in India under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
+        image: earbuds,
+      },
+      {
+        desc: "2024 Samsung Crystal 4K TV series with 4K upscaling, 3D surround sound, and more launched in India: price, features",
+        image: samsung,
+      },
+    ],
+    // featuredArticles: [
+    //   { title: "The Future of Wearable Tech: Innovations to Watch", category: "Wearable", image: "image-url" },
+    //   { title: "Gaming Gadgets: Enhancing the Gaming Experience", category: "Gaming", image: "image-url" }
+    // ],
+    // archives: [
+    //   { title: "Best Gadgets of 2023", category: "Review", image: "image-url" },
+    //   { title: "Tech Trends of the Decade", category: "Trends", image: "image-url" }
+    // ],
+    // editorialContent: [
+    //   { title: "How to Choose the Right Smartphone for You", category: "Guides", image: "image-url" },
+    //   { title: "The Impact of AI on Daily Life", category: "AI", image: "image-url" }
+    // ],
+    // multimediaContent: [
+    //   { title: "Video Review: XYZ Phone Pro 2024", category: "Smartphones", video: "video-url" },
+    //   { title: "Podcast: The Future of Tech", category: "Tech", audio: "audio-url" }
+    // ]
+  };
   // Sample data for demonstration
   const trendingNewsData = {
     headlines: [
@@ -44,6 +79,10 @@ const TrendingNewsComponent = () => {
       {
         desc: "Best TWS earbuds in India under Rs 6,000 in April 2024: OnePlus Buds 3, OPPO Enco Air3 Pro, and more",
         image: earbuds,
+      },
+      {
+        desc: "Fire Boltt Oracle with LTE calling, 1.96-inch HD display launched in India: price, specifications",
+        image: bolt,
       },
     ],
     // featuredArticles: [
@@ -101,8 +140,10 @@ const TrendingNewsComponent = () => {
 
   return (
     <Container>
-      <div className="section" style={{marginBottom:"20px"}}>
-        <ul  >
+      <div className="section" style={{ marginBottom: "20px" }}>
+        <Row>
+          <Col lg={8}>
+          <ul>
           {News1.map((item, index) => (
             <li key={index}>
               <h3 style={{ padding: "10px" }}>{item.title}</h3>
@@ -110,38 +151,68 @@ const TrendingNewsComponent = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                style={{ width: "70%" , marginRight:"auto",display:"block"}}
+                style={{ width: "70%", marginRight: "auto", display: "block" }}
               />
-              <div style={{padding:"10px"}}>
-                <h3  >
-                  Highlights
-                </h3>
-                <p style={{ color: "#ccc", fontSize:"20px", fontWeight: "600" }}>{item.price}</p>
+              <div style={{ padding: "10px" }}>
+                <h3 style={{color:"orange"}}>Highlights</h3>
+                <p
+                  style={{ color: "#ccc", fontSize: "20px", fontWeight: "600" }}
+                >
+                  {item.price}
+                </p>
                 <p>{item.description}</p>
               </div>
             </li>
           ))}
         </ul>
-
-        <h4>Top Trending News</h4>
-        <Slider {...settings} style={{ padding: "20px" }}>
-        {trendingNewsData.headlines.map((item, index) => (
-          <div className="small">
-            <ul>
-              
-                <li key={index}>
-                  <img style={{padding:"10px"}} src={item.image} alt={item.image} />
-
-                  <div style={{padding:"10px"}}>
-                    <p>{item.desc}</p>
-                  </div>
-                </li>
-            
-            </ul>
-          </div>  ))}
-        </Slider>
-
-        {/* <div className="section">
+          </Col>
+          <Col lg={4} style={{paddingTop:"10px",border:"1px solid #ccc"}}>
+          <h4>Trending News</h4>
+           
+            {NewsData.headlines.map((item, index) => (
+              <div className="small" >
+                <Row >
+                  <Col   key={index}>
+                    <img
+                      style={{ padding: "10px" }}
+                      src={item.image}
+                      alt={item.image}
+                    />
+                    </Col><Col  >
+                    <div style={{ padding: "10px"  }}>
+                    <a href="/NewsProductPage" style={{ color:"green"}}>  <p>{item.desc}</p></a>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            ))}
+          
+          </Col>
+        </Row>
+       
+        <div>
+          <h4 style={{color:"#758745"}}>Also Read</h4>
+          <Slider {...settings}  >
+            {trendingNewsData.headlines.map((item, index) => (
+              <div className="small">
+                <ul>
+                  <li key={index}>
+                    <img
+                      style={{ padding: "10px" }}
+                      src={item.image}
+                      alt={item.image}
+                    />
+                    <div style={{ padding: "10px" }}>
+                      <p>{item.desc}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+      {/* <div className="section">
         <h2>Archives</h2>
         <ul>
           {trendingNewsData.featuredArticles.map((item, index) => (
@@ -155,7 +226,7 @@ const TrendingNewsComponent = () => {
           ))}
         </ul>
       </div> */}
-        {/* <div className="section">
+      {/* <div className="section">
         <h2>EditorialContent</h2>
         <ul>
           {trendingNewsData.featuredArticles.map((item, index) => (
@@ -169,7 +240,7 @@ const TrendingNewsComponent = () => {
           ))}
         </ul>
       </div> */}
-        {/* <div className="section">
+      {/* <div className="section">
         <h2> MultimediaContent</h2>
         <ul>
           {trendingNewsData.featuredArticles.map((item, index) => (
@@ -183,7 +254,7 @@ const TrendingNewsComponent = () => {
           ))}
         </ul>
       </div> */}
-      </div>
+
       {/* Similarly render other sections */}
     </Container>
   );

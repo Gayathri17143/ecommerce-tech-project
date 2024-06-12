@@ -229,7 +229,9 @@ function ResponsiveAppBar() {
     <AppBar position="static" sx={{ background: "none", color: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-         <a href="/"><img className="d-block" src={Banner} alt="First slide" /></a> 
+          <a href="/">
+            <img className="d-block" src={Banner} alt="First slide" />
+          </a>
 
           <Box
             sx={{
@@ -339,9 +341,9 @@ function ResponsiveAppBar() {
                             </div>
 
                         </Stack> */}
-            <Dialog open={open} onClose={handleClose}>
+            <Dialog open={open}  onClose={handleClose}>
               <DialogContent>
-                <LoginForm />
+                <LoginForm  closeDialog={handleClose} />
               </DialogContent>
             </Dialog>
             <Box sx={{ flexGrow: 0 }}>
@@ -388,7 +390,7 @@ function ResponsiveAppBar() {
                       {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
-                      <Button href="/whislit">Wishlist</Button>
+                      <Button href="/wishlist">Wishlist</Button>
                       {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>

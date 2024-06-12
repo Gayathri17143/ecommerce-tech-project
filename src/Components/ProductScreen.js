@@ -182,7 +182,7 @@ function ProductScreen() {
               {/* <p>{createdAt.substring(0, 10)}</p> */}
 
               <ListGroup.Item>
-                <h4>Write a Review</h4>
+                <h4 style={{textAlign:"center"}}>Write a Review</h4>
 
                 {/* {loadingProductReview && <Loader />}
                 {successProductReview && (

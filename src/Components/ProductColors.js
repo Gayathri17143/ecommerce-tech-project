@@ -5,24 +5,21 @@ import { Container, Button } from "react-bootstrap";
 import Video from "./Video";
 import Ratings from "./ProductScreen";
 import Overview from "./Overview";
-import Specs from "./Specs";
-import apple from "../assets/Apple-iphone-15-pro-max-black.png";
-import apple1 from "../assets/Apple-iphone-15-pro-max-blue-titanium-1.png";
-import apple2 from "../assets/Apple-iphone-15-pro-max-blue-titanium-2.png";
-import apple3 from "../assets/Apple-iphone-15-pro-max-blue-titanium-3.png";
+import Specs from "./Specs"; 
+import apple1 from "../assets/Apple-white-1.png";
+import apple2 from "../assets/Apple-white-2.png";
+import apple3 from "../assets/Apple-white-3.png"; 
 import Pincode from "../Components/Pincode";
 const product = {
   id: 1,
   title: "Apple iPhone 15 Pro Max",
   slug: "new-luxury-laptop",
   availability: "Instock",
-  img: apple,
-  Price: 183990,
+  img:apple1,
+  Price: 173990,
   desc: "Apple iPhone 15 Pro Max price in India starts from Rs. 148,900. The lowest price of Apple iPhone 15 Pro Max is Rs. 148,900 at amazon.in. This is 8 GB RAM / 256 GB internal storage base variant of Apple iPhone 15 Pro Max which is available in Black Titanium, White Titanium, Blue Titanium, Natural Titanium colour.",
   images: [
-    {
-      src: apple,
-    },
+     
     {
       src: apple1,
     },
@@ -32,9 +29,7 @@ const product = {
     {
       src: apple3,
     },
-    {
-      src: apple,
-    },
+    
     {
       src: apple1,
     },
@@ -44,12 +39,16 @@ const product = {
     {
       src: apple3,
     },
-    {
-      src: apple,
-    },
+    
     {
       src: apple1,
     },
+    {
+        src: apple2,
+      },
+      {
+        src: apple3,
+      },
   ],
   colors: [
     { id: 1, name: "black", color: "black", url: "/Details/id" },
@@ -60,18 +59,21 @@ const product = {
   variants: [
     {
       id: 1,
-
-      storage: "64GB",
+     
+      storage: '64GB',
+      
     },
     {
       id: 2,
-
-      storage: "128GB",
+      
+      storage: '128GB',
+      
     },
     {
       id: 3,
-
-      storage: "256GB",
+     
+      storage: '256GB',
+      
     },
   ],
   infos: [
@@ -106,9 +108,7 @@ const Details = () => {
   const [change, setChange] = useState(9);
 
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-
   const [selectedStorage, setSelectedStorage] = useState(product.variants[0]);
-
   const [infoTitle, setInfoTitle] = useState(product.infos[0].title);
 
   const slideRef = useRef();
@@ -238,7 +238,7 @@ const Details = () => {
               {product.availability}
             </p>
             <p className="product-price">
-              ₹
+            ₹
               {Math.round(
                 product.Price - (product.Price * product.discount) / 100
               )}
@@ -252,7 +252,7 @@ const Details = () => {
                   <Button
                     href={color.url}
                     //  sx={{ background: color }}
-                    style={{ backgroundColor: color.color, margin: "5px" }}
+                    style={{ backgroundColor: color.color ,margin:"5px"}}
                     className={color === selectedColor ? "active" : ""}
                     onClick={() => setSelectedColor(color)}
                   />
@@ -260,30 +260,33 @@ const Details = () => {
               ))}
             </div>
             <div className="product-options">
-              <p>Storage: {selectedStorage.storage}</p>
-            </div>
-            <div className="variant-selector">
-              {product.variants.map((variant) => (
-                <button
-                  key={variant.id}
-                  onClick={() => handleVariantChange(variant)}
-                  className={variant.id === selectedStorage.id ? "active" : ""}
-                >
-                  {variant.storage}
-                </button>
-              ))}
-            </div>
-            <Pincode/>
+        
+        <p>Storage: {selectedStorage.storage}</p>
+        
+      </div>
+      <div className="variant-selector">
+        {product.variants.map((variant) => (
+          <button
+            key={variant.id}
+            onClick={() => handleVariantChange(variant)}
+            className={variant.id === selectedStorage.id ? 'active' : ''}
+          >
+           {variant.storage}
+          </button>
+        ))}
+      </div>
+      <Pincode/>
             {/* <div className="product-page-offer">
               <i className="fa-solid fa-tag" /> {product.discount}% Discount
-            </div> */}
-            {/* <div className="product-sold">
+            </div>
+            <div className="product-sold">
               <img src={SoldIcon} alt="SoldIcon" />
               <strong>
                 {product.sold}
                 <span>Products Sold.</span>
               </strong>
             </div> */}
+
             <div className="cart-btns">
               <a
                 href="#!"

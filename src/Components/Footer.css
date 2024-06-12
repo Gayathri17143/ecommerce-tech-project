@@ -75,6 +75,9 @@
   .foot-item{
     /* width: 40%; */
     padding :5%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
   .pad{
     padding: 2%;

@@ -29,19 +29,21 @@
 }
 
  .mySlides .numbertext{
-    color: #f2f2f2;
-    text-shadow: 0 0 4px blue;
+    color: #000;
+    /* text-shadow: 0 0 4px blue; */
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
     left: 0;
+    font-weight: 600;
  }
  .mySlides img {
-    width: 100%;
+    width: 50%;
     height: 100%;
-    display: inline-block;
+    display: block;
     object-fit: cover;
+    margin:0 auto;
  }
 
  .product-page-img .prev,
@@ -181,14 +183,15 @@
     border: 2px solid crimson;
 }
 
-.product-page-details .product-page-offer{
-    display: inline-block;
+.product-page-details .product-page-offer {
+    display: flex;
     color: #fff;
-    font-size: 0.8rem;
-    padding: 4px 10px;
+    font-size: 15px;
+    padding: 5px 5px;
     border-radius: 10px;
     background: #ec1111;
     margin-top: 10px;
+    width: 22%;
 }
 
 .product-page-details .product-page-offer i {

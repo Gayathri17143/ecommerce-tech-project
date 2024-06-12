@@ -10,61 +10,61 @@ const ProductList = () => {
     {
       id: 1,
 
-      description: "Description of Product 1",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 2,
 
-      description: "Description of Product 2",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 3,
 
-      description: "Description of Product 3",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 4,
 
-      description: "Description of Product 4",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 5,
 
-      description: "Description of Product 5",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 6,
 
-      description: "Description of Product 6",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },
     {
       id: 7,
 
-      description: "Description of Product 7",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     }, {
       id: 8,
 
-      description: "Description of Product 8",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     }, {
       id: 9,
 
-      description: "Description of Product 9",
+      description: "The iPhone 15 Pro Max comes as one of the most significant upgrades in recent years, and not just because of the Type-C port. It shines in the performance and display departments, and boasts capable cameras that shoot excellent stills and videos. On the other hand, charging is still slow, and you need to shell out quite a bit to acquire one.",
 
       videoUrl: "https://www.youtube.com/embed/2CuZLR_Z-8s",
     },

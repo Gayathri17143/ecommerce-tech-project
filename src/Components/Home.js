@@ -6,37 +6,31 @@ import Bannercarousel from "./Bannercarousel";
 import FeaturedProducts from "./FeaturedProducts";
 
 // import ResetPassword from "./Components/ResetPassword";
-import Shopbyprice from "./Shopbyprice"
+
 import TrendingProducts from "./TrendingProducts";
-import Reviews from "./Reviews";
+
 import Brandlogos from "./Brandlogos";
 import React from 'react';
 import ImageGrid from "./ImageGrid";
- import Services from "./Services";
-//  import Product from "../Components/Product";
- import Newsletter from "../Components/Newsletter";
+ import Services from "./Services"; 
  import Productpage from "../Components/Productpage";
 // import { Checkbox } from "@material-ui/core";
-  
+
+import MyOrders from "./Myorders"; 
+// import OrderHistory from "./OrderHistory";
 export default function App() {
 
       
       return (
             <>
-                  
                   <Bannercarousel />
                   <ImageGrid />
-                  {/* <Product/> */}
+                 {/* <OrderHistory/> */}
+                  <Services/>
                    <Productpage/>
                    <Brandlogos/>
-                   <Services/>
-                  
-                  <FeaturedProducts/>
-                  <TrendingProducts />
-                 
-                  
-               
-                  
+                   <FeaturedProducts/>
+                   <TrendingProducts />
             </>
       );
 }

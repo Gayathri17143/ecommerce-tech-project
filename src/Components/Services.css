@@ -16,7 +16,10 @@
 .wrapper .img i {
   font-size: 25px;
 }
-
+h6 {
+  font-weight: bold;
+  font-size: 18px;
+}
 /* .wrapper .product {
   padding: 30px;
 } */

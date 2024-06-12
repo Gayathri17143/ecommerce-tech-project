@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Container style={{padding:"30px"}}>
-      <h3>Personal Information</h3>
+      <h3 style={{textAlign:"center"}}>Personal Information</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>FirstName:</label>
