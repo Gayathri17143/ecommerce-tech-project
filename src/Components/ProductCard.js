@@ -24,7 +24,7 @@ const ProductCard = ({ product, onToggleWishlist }) => {
   return (
     <div className="product">
       <div className="product-image-wrapper">
-        <img className="product-image" src={product.img} alt={product.title} />
+        <img className="product-image" src={product.img} alt={product.title}   />
         <div style={{ padding: "20px 5px 3px 5px" }}>
           <h6 className="product-name">{product.title}</h6>
         </div>

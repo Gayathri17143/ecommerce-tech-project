@@ -1,0 +1,31 @@
+.MainDash{
+    /* padding-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.mar{
+    margin: 20px;
+}
+
+/* :where(.css-dev-only-do-not-override-k83k30).ant-row {
+    display: block;
+    
+} */
+:where(.css-dev-only-do-not-override-m4timi).ant-row {
+    display: block;
+   
+}
+@media screen and (max-width: 1200px) {
+    .MainDash{
+        justify-content:flex-start;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .MainDash{
+        align-items: center;
+    }
+}

@@ -9,8 +9,8 @@ import Watch from "../assets/oppo-watch-x.jpg";
 import Vivo from "../assets/vivo-v30-pro.jpg";
 import Oneplus from "../assets/samsung-galaxy-s24-ultra-5g-sm-s928-stylus.jpg";
 import Samsung from "../assets/samsung-galaxy-m15.jpg";
-import { Container, Row, Col, Card } from "react-bootstrap";
-// import { Container } from 'react-bootstrap';
+import {   Row, Col, Card } from "react-bootstrap";
+import { Container } from '@mui/material';
 // import { LinkContainer } from 'react-router-bootstrap';
 const ImageGrid = () => {
   const [product, setProduct] = useState([]);
@@ -71,13 +71,14 @@ const ImageGrid = () => {
   };
   return (
     <Container>
-      <h3>Featured Products</h3>
+      <div style={{margin:"30px"}}>
+      <h3 className="title">Featured Products</h3>
       <Slider {...settings}>
         {/* <Row> */}
         {data.map((item, index) => (
           // <Col  md={6} sm={6} xs={12} style={{padding:"20px"}}>
           <div className="item" key={index}>
-            <Card style={{ margin: "10px" }}>
+            <Card style={{ margin: "10px",border:"none" }}>
               <img
                 src={item.img}
                 alt={item.title}
@@ -89,7 +90,8 @@ const ImageGrid = () => {
                   style={{
                     textAlign: "left",
                     paddingTop: "10px",
-                    fontWeight: "500",
+                    fontWeight: "700",
+                    fontSize:"18px"
                   }}
                 >
                   {item.title}
@@ -110,6 +112,7 @@ const ImageGrid = () => {
 
         {/* </Row> */}
       </Slider>
+      </div>
     </Container>
   );
 };

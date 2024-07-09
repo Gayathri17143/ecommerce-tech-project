@@ -30,22 +30,53 @@ const navBarData = [
                 submenu: [
                     {
                         label: "Chargers",
-                        url: "/Accessories/Chargers",
+                        url: "/Accessories/chargers",
                     },
                     {
                         label: "Adapters",
-                        url: "/Accessories/Adapters",
+                        url: "/Accessories/adapters",
                     },
                     {
                         label: "Cables & Connectors",
-                        url: "/Accessories/Cables & Connectors",
+                        url: "/Accessories/Cables&Connectors",
+                    },
+                    {
+                        label: "Powerbanks",
+                        url: "/powerbanks",
+                    },
+                    {
+                        label: "Wired",
+                        url: "/wired",
+                    },
+         
+                    {
+                        label: "Wireless",
+                        url: "/Wireless",
+                        // submenu: [
+                        //     {
+                        //         label: "Bluetooth Headsets",
+                        //         url: "/Wireless/Bluetooth Headsets",
+                        //     },
+                        //     {
+                        //         label: "Boom HeadPhones",
+                        //         url: "/Wireless/Boom HeadPhones",
+                        //     },
+                        // ],
+                    },
+                    {
+                        label: "True Wireless",
+                        url: "/True Wireless",
+                        submenu: [
+                            {
+                                label: "Earbuds",
+                                url: "/TrueWireless/Earbuds",
+                            },
+        
+                        ],
                     },
                 ],
             },
-            {
-                label: "Powerbanks",
-                url: "/Powerbanks",
-            },
+           
             {
                 label: "Cameras",
                 url: "/Cameras",
@@ -60,7 +91,6 @@ const navBarData = [
 
         ],
     },
-
     {
         label: "Laptop & Tablets",
         submenu: [
@@ -70,11 +100,11 @@ const navBarData = [
                 submenu: [
                     {
                         label: "Mackbook Air",
-                        url: "/macbook-laptop/mackbook-air",
+                        url: "/macbooklaptop/mackbookair",
                     },
                     {
                         label: "Mackbook Pro",
-                        url: "/macbook-laptop/mackbook-pro",
+                        url: "/macbooklaptop/mackbookpro",
                     },
                 ],
             },
@@ -114,31 +144,31 @@ const navBarData = [
 
             {
                 label: "4K Ultra HD TVS",
-                url: "/HD TVS",
+                url: "/smarttvs",
             },
             {
                 label: "Full HD TVS",
-                url: "/HD TVS",
+                url: "/fullhdtvs",
             },
             {
                 label: " HD TVS",
-                url: "/HD TVS",
+                url: "/hdtvs",
             },
             {
                 label: "QLED TVS",
-                url: "/QLED TVS",
+                url: "/qledtvs",
             },
             {
                 label: "OLED TVS",
-                url: "/OLED TVS",
+                url: "/oledtvs",
             },
             {
                 label: "Smart Tvs",
-                url: "/Smart Tvs",
+                url: "/smarttvs",
             },
             {
-                label: "Android Tvs",
-                url: "/Android Tvs",
+                label: "AndroidTvs",
+                url: "/AndroidTvs",
             },
         ],
     },
@@ -146,21 +176,23 @@ const navBarData = [
         label: "SmartWatch",
         submenu: [
 
+            
             {
-                label: "Wearables",
-                url: "/Wearables",
+                label: "FitnessTracker",
+                url: "/FitnessTracker",
+            },
+           
+            {
+                label: "Chargers",
+                url: "/chargers",
             },
             {
-                label: "Fitness Tracker",
-                url: "/Fitness Tracker",
+                label: "Straps",
+                url: "/straps",
             },
             {
-                label: "Smart Glasses",
-                url: "/Smart Glasses",
-            },
-            {
-                label: "Smart Watches",
-                url: "/Smart Watches",
+                label: "Cables",
+                url: "/cables",
             },
 
         ],
@@ -171,70 +203,28 @@ const navBarData = [
 
             {
                 label: "Bluetooth Speakers",
-                url: "/Bluetooth Speakers",
-            },
-            {
-                label: "Music Player",
-                url: "/Music Player",
+                url: "/bluetoothspeakers",
             },
             {
                 label: "Party Speakers",
-                url: "/Party Speakers",
+                url: "/partyspeakers",
             },
             {
                 label: "Portable Speakers",
-                url: "/Portable Speakers",
+                url: "/portablespeakers",
             },
             {
                 label: "Smart Speakers",
-                url: "/Smart Speakers",
+                url: "/smartspeakers",
             },
             {
-                label: "Sound Bars",
-                url: "/Sound Bars",
+                label: "SoundBars",
+                url: "/SoundBars",
             },
 
         ],
     },
-    {
-        label: "HeadPhones & Headsets",
-
-        submenu: [
-
-            {
-                label: "Wired",
-                url: "/Wired",
-            },
-
-
-            {
-                label: "Wireless",
-                url: "/Wireless",
-                submenu: [
-                    {
-                        label: "Bluetooth Headsets",
-                        url: "/Wireless/Bluetooth Headsets",
-                    },
-                    {
-                        label: "Boom HeadPhones",
-                        url: "/Wireless/Boom HeadPhones",
-                    },
-                ],
-            },
-            {
-                label: "True Wireless",
-                url: "/True Wireless",
-                submenu: [
-                    {
-                        label: "Earbuds",
-                        url: "/True Wireless/Earbuds",
-                    },
-
-                ],
-            },
-        ],
-
-    },
+   
 
 
 ];

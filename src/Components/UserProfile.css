@@ -1,36 +1,62 @@
- 
-  
-  /* .form-group {
-    margin-bottom: 20px;
-  } */
-  
-  label {
-    /* display: block; */
-    font-weight: bold;
-  }
-  
- .form-group input[type="text"],
- .form-group input[type="email"],
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 5px 15px;
-    background-color: #636a74;
-    color: #fff;
-    border: none;
-    border-radius: 30px!important;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-     
-  }
-  
+/* General label styling */
+label {
+  font-weight: bold;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center; /* Ensures labels and inputs are aligned properly */
+}
+
+/* Styling form inputs, select, and textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+  width: 40%; /* Adjusted width for better layout */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 10px; /* Space between label and input */
+  margin-right: 10px;
+}
+
+/* Styling the submit button */
+button {
+  padding: 5px 15px;
+  background-color: #ffbb38;
+  color: #000;
+  border: none;
+  border-radius: 30px !important;
+  cursor: pointer;
+  margin: 20px auto; /* Center the button */
+  display: block;
+}
+
+button:hover {
+  background-color: #b8c8d8;
+}
+
+/* Container styling */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styling */
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -5,7 +5,8 @@ import samsung from "../assets/news-samsung.webp";
 import bolt from "../assets/news-Fire-Boltt.webp";
 import earbuds from "../assets/news-tws-earbuds.webp";
 import { News1 } from "../Components/NewsProductdata";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import {  Row, Col, Card } from "react-bootstrap";
+import { Container } from "@mui/material";
 import News from "../Components/News";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -48,22 +49,7 @@ const TrendingNewsComponent = () => {
         image: samsung,
       },
     ],
-    // featuredArticles: [
-    //   { title: "The Future of Wearable Tech: Innovations to Watch", category: "Wearable", image: "image-url" },
-    //   { title: "Gaming Gadgets: Enhancing the Gaming Experience", category: "Gaming", image: "image-url" }
-    // ],
-    // archives: [
-    //   { title: "Best Gadgets of 2023", category: "Review", image: "image-url" },
-    //   { title: "Tech Trends of the Decade", category: "Trends", image: "image-url" }
-    // ],
-    // editorialContent: [
-    //   { title: "How to Choose the Right Smartphone for You", category: "Guides", image: "image-url" },
-    //   { title: "The Impact of AI on Daily Life", category: "AI", image: "image-url" }
-    // ],
-    // multimediaContent: [
-    //   { title: "Video Review: XYZ Phone Pro 2024", category: "Smartphones", video: "video-url" },
-    //   { title: "Podcast: The Future of Tech", category: "Tech", audio: "audio-url" }
-    // ]
+    
   };
   // Sample data for demonstration
   const trendingNewsData = {
@@ -85,22 +71,7 @@ const TrendingNewsComponent = () => {
         image: bolt,
       },
     ],
-    // featuredArticles: [
-    //   { title: "The Future of Wearable Tech: Innovations to Watch", category: "Wearable", image: "image-url" },
-    //   { title: "Gaming Gadgets: Enhancing the Gaming Experience", category: "Gaming", image: "image-url" }
-    // ],
-    // archives: [
-    //   { title: "Best Gadgets of 2023", category: "Review", image: "image-url" },
-    //   { title: "Tech Trends of the Decade", category: "Trends", image: "image-url" }
-    // ],
-    // editorialContent: [
-    //   { title: "How to Choose the Right Smartphone for You", category: "Guides", image: "image-url" },
-    //   { title: "The Impact of AI on Daily Life", category: "AI", image: "image-url" }
-    // ],
-    // multimediaContent: [
-    //   { title: "Video Review: XYZ Phone Pro 2024", category: "Smartphones", video: "video-url" },
-    //   { title: "Podcast: The Future of Tech", category: "Tech", audio: "audio-url" }
-    // ]
+    
   };
   const settings = {
     dots: true,
@@ -140,13 +111,13 @@ const TrendingNewsComponent = () => {
 
   return (
     <Container>
-      <div className="section" style={{ marginBottom: "20px" }}>
+      <div className="section" style={{ padding: "3%" }}>
         <Row>
           <Col lg={8}>
           <ul>
           {News1.map((item, index) => (
             <li key={index}>
-              <h3 style={{ padding: "10px" }}>{item.title}</h3>
+              <h3 style={{ padding: "10px" ,textAlign:"left"}}>{item.title}</h3>
 
               <img
                 src={item.image}
@@ -154,7 +125,7 @@ const TrendingNewsComponent = () => {
                 style={{ width: "70%", marginRight: "auto", display: "block" }}
               />
               <div style={{ padding: "10px" }}>
-                <h3 style={{color:"orange"}}>Highlights</h3>
+                <h3 style={{color:"#ffbb38",textAlign:"left"}}>Highlights</h3>
                 <p
                   style={{ color: "#ccc", fontSize: "20px", fontWeight: "600" }}
                 >
@@ -212,50 +183,7 @@ const TrendingNewsComponent = () => {
           </Slider>
         </div>
       </div>
-      {/* <div className="section">
-        <h2>Archives</h2>
-        <ul>
-          {trendingNewsData.featuredArticles.map((item, index) => (
-            <li key={index}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.category}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-      {/* <div className="section">
-        <h2>EditorialContent</h2>
-        <ul>
-          {trendingNewsData.featuredArticles.map((item, index) => (
-            <li key={index}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.category}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-      {/* <div className="section">
-        <h2> MultimediaContent</h2>
-        <ul>
-          {trendingNewsData.featuredArticles.map((item, index) => (
-            <li key={index}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.category}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-
-      {/* Similarly render other sections */}
+       
     </Container>
   );
 };

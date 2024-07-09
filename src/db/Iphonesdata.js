@@ -1,0 +1,173 @@
+import { AiFillStar } from "react-icons/ai";
+import apple from "../assets/Apple-iphone-15-pro-max-black.png"
+import apple1 from "../assets/apple-iphone-15-plus-blue.png"
+import apple2 from "../assets/Apple-iphone-13-product-red.png"
+import apple3 from "../assets/Apple-14-Plus-Blue.png"
+import apple4 from "../assets/apple-iphone-13-green.png"
+import apple5 from "../assets/apple-iphone-13-pink.png"
+import apple6 from "../assets/apple-iphone-14-yellow.png"
+import apple7 from "../assets/Apple-14-Plus-Purple.png"
+import apple8 from "../assets/Apple-iphone-15-pro-white-titanium.png"
+import apple9 from "../assets/Apple-14-Plus-white.png" 
+ 
+const data = [
+  {
+    id:1,
+    img: apple,
+    title: "Apple iPhone 15 Pro Max",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 1,59,900",
+    Price: "151900",
+    company: "hightolow",
+    color: "black",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+  {
+    id:2,
+    img: apple1,
+    title: "Apple iPhone 15 Plus",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 1,19,900",
+    Price: "109990",
+    company: "hightolow",
+    color: "blue",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+
+  {
+    id:3,
+    img: apple2,
+    title: "Apple iPhone 13",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 89,900",
+    Price: "82990",
+    company: "lowtohigh",
+    color: "red",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: false,
+  },
+  {
+    id:4,
+    img: apple3,
+    title: "Apple iPhone 14 Plus",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 79,900",
+    Price: "171990",
+    company: "lowtohigh",
+    color: "blue",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+  {
+    id:5,
+    img: apple4,
+    title: "Apple iPhone 13",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 1,02,999",
+    Price: "82990",
+    company: "lowtohigh",
+    color: "green",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+  {
+    id:6,
+    img: apple5,
+    title: "Apple iPhone 13",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 99,999",
+    Price: "62990",
+    company: "lowtohigh",
+    color: "pink",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: false,
+  },
+
+   
+   
+  {
+    id:7,
+    img: apple6,
+    title: "Apple iPhone 14",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 49,999",
+    Price: "71990",
+    company: "lowtohigh",
+    color: "yellow",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+  
+  {
+    id:8,
+    img: apple7,
+    title: " Apple iPhone 14 Plus",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 40,999",
+    Price: "181990",
+    company: "lowtohigh",
+    color: "purple",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+  {
+    id:9,
+    img: apple8,
+    title: "Apple iPhone 15 Pro",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 10,999",
+    Price: "159900",
+    company: "hightolow",
+    color: "white",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: false,
+   
+  },
+  {
+    id:10,
+    img: apple9,
+    title: "Apple iPhone 14 Plus",
+    // star: <AiFillStar className="rating-star" />,
+    // reviews: "(reviews)",
+    // prevPrice: "₹ 16,999",
+    Price: "102990",
+    company: "hightolow",
+    color: "white",
+    category: "apple",
+    discount: "5",
+    inWishlist: false,
+    inStock: true,
+  },
+   
+];
+
+export default data;

@@ -1,0 +1,40 @@
+.AppHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 0 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: inline-block;
+    margin-right: 16px;
+  }
+
+  .header-right {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

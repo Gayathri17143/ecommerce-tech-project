@@ -1,164 +1,68 @@
-import React, { useState } from "react";
-import { Auth } from "aws-amplify";
+import React,{Component} from "react";
 import { Link } from "react-router-dom";
-import {
-  FormText,
-  FormGroup,
-  FormControl,
-  FormLabel,
-} from "react-bootstrap";
-import { BsCheck } from "react-icons/bs";
-import LoaderButton from "../components/LoaderButton";
-import { useFormFields } from "../lib/hooksLib";
-import { onError } from "../lib/errorLib";
-import "./ResetPassword.css";
+import axios from "axios";
+import { Navigate } from 'react-router'
+import { message } from "antd";
+export class Reset extends Component {
+    
+    state={};
 
-export default function ResetPassword() {
-  const [fields, handleFieldChange] = useFormFields({
-    code: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const [codeSent, setCodeSent] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
-  const [isConfirming, setIsConfirming] = useState(false);
-  const [isSendingCode, setIsSendingCode] = useState(false);
+    handleSubmit = e => {
+        e.preventDefault();
 
-  function validateCodeForm() {
-    return fields.email.length > 0;
-  }
+        const data ={
+            token:this.props.match.params.id,
+            password : this.password,
+            password_confirm:this.password_confirm
+        }
+        axios.post('reset',data).then(
+            res=>{
+                console.log(res);
+                this.setState({
+                    Reset:true
+                });
+            }
+        ).catch(
+            err=>{
+               this.setState({
+                message:err.response.data.message
+               })
+            }
+        )
+    };
 
-  function validateResetForm() {
-    return (
-      fields.code.length > 0 &&
-      fields.password.length > 0 &&
-      fields.password === fields.confirmPassword
-    );
-  }
 
-  async function handleSendCodeClick(event) {
-    event.preventDefault();
+    render(){
 
-    setIsSendingCode(true);
+            if(this.state.reset) {
+                return <Navigate to ={'/login'}/>
+            }
 
-    try {
-      await Auth.forgotPassword(fields.email);
-      setCodeSent(true);
-    } catch (error) {
-      onError(error);
-      setIsSendingCode(false);
+            let error='';
+
+            if(this.state.message){
+                error=(
+                    <div className="alert alert-danger" role="alert">
+                        {this.state.message}
+                    </div>
+                )
+            }
+
+        return(
+            <form onSubmit={this.handleSubmit}>
+                {error}
+                <h3>Reset Password</h3>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Password" onChange={e=>this.password =e.target.value}/>
+                </div>
+                <div className="form-group">
+                    <label>Password Confirm</label>
+                    <input type="password" className="form-control" placeholder="Password Confirm" onChange={e=>this.password_confirm =e.target.value}/>
+                </div>
+                <button className="btn btn-primary btn-block">Submit</button>
+               
+            </form>
+        )
     }
-  }
-
-  async function handleConfirmClick(event) {
-    event.preventDefault();
-
-    setIsConfirming(true);
-
-    try {
-      await Auth.forgotPasswordSubmit(
-        fields.email,
-        fields.code,
-        fields.password
-      );
-      setConfirmed(true);
-    } catch (error) {
-      onError(error);
-      setIsConfirming(false);
-    }
-  }
-
-  function renderRequestCodeForm() {
-    return (
-      <form onSubmit={handleSendCodeClick}>
-        <FormGroup bsSize="large" controlId="email">
-          <FormLabel>Email</FormLabel>
-          <FormControl
-            autoFocus
-            type="email"
-            value={fields.email}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
-        <LoaderButton
-          block
-          type="submit"
-          bsSize="large"
-          isLoading={isSendingCode}
-          disabled={!validateCodeForm()}
-        >
-          Send Confirmation
-        </LoaderButton>
-      </form>
-    );
-  }
-
-  function renderConfirmationForm() {
-    return (
-      <form onSubmit={handleConfirmClick}>
-        <FormGroup bsSize="large" controlId="code">
-          <FormLabel>Confirmation Code</FormLabel>
-          <FormControl
-            autoFocus
-            type="tel"
-            value={fields.code}
-            onChange={handleFieldChange}
-          />
-          <FormText>
-            Please check your email ({fields.email}) for the confirmation code.
-          </FormText>
-        </FormGroup>
-        <hr />
-        <FormGroup bsSize="large" controlId="password">
-          <FormLabel>New Password</FormLabel>
-          <FormControl
-            type="password"
-            value={fields.password}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
-        <FormGroup bsSize="large" controlId="confirmPassword">
-          <FormLabel>Confirm Password</FormLabel>
-          <FormControl
-            type="password"
-            value={fields.confirmPassword}
-            onChange={handleFieldChange}
-          />
-        </FormGroup>
-        <LoaderButton
-          block
-          type="submit"
-          bsSize="large"
-          isLoading={isConfirming}
-          disabled={!validateResetForm()}
-        >
-          Confirm
-        </LoaderButton>
-      </form>
-    );
-  }
-
-  function renderSuccessMessage() {
-    return (
-      <div className="success">
-        <p><BsCheck size={16} /> Your password has been reset.</p>
-        <p>
-          <Link to="/login">
-            Click here to login with your new credentials.
-          </Link>
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="ResetPassword">
-      {!codeSent
-        ? renderRequestCodeForm()
-        : !confirmed
-        ? renderConfirmationForm()
-        : renderSuccessMessage()}
-    </div>
-  );
 }

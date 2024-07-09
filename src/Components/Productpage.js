@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container } from "react-bootstrap";
+import { Container } from "@mui/material";
 // import { FaHeart, FaRegHeart } from "react-icons/fa";
 // import { Button } from "@mui/material";
 import "./Latestproduct.css";
@@ -68,11 +68,11 @@ const Component = () => {
         : product
     );
     setProducts(updatedProducts);
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
+    localStorage.setItem("mobproducts", JSON.stringify(updatedProducts));
   };
   useEffect(() => {
     const fetchDataFromLocalStorage = () => {
-      const storedProducts = localStorage.getItem("products");
+      const storedProducts = localStorage.getItem("mobproducts");
       if (storedProducts) {
         setProducts(JSON.parse(storedProducts));
       }
@@ -93,8 +93,9 @@ const Component = () => {
   };
 
   return (
-    <div>
+   
       <Container>
+         <div className="main-title"> 
         <h3 className="title">Latest Products</h3>
 
         <Slider {...settings}>
@@ -110,8 +111,10 @@ const Component = () => {
             </div>
           ))}
         </Slider>
+        </div>
       </Container>
-    </div>
+      
+   
   );
 };
 

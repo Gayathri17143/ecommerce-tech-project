@@ -1,0 +1,31 @@
+/* .SideMenu {
+    transition: transform 0.3s ease;
+  }
+  
+  .SideMenu.hidden {
+    transform: translateX(-100%);
+  }
+  
+  .SideMenu.visible {
+    transform: translateX(0);
+  } */
+
+  .menu-label {
+    color: #000000 !important; /* Your desired color */
+    font-size: 16px !important; /* Optional: Adjust font size if needed */
+  }
+  
+  .menu-label:hover {
+    color: #868dfb !important; /* Your desired hover color */
+  }
+  
+  .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+    position: relative;
+    background-color: #f2f0f0;
+}
+
+ 
+  @media (max-width: 768px) {
+   
+  }
+  

@@ -56,7 +56,7 @@ const LoginForm = ({ switchForm, closeDialog }) => {
         />
 
         <Typography align="right" mt={2} mb={2}>
-          <Link href="">Forget Password?</Link>
+          <Link href="/forgot">Forget Password?</Link>
         </Typography>
 
         <Button type="submit" variant="contained" color="primary" fullWidth>

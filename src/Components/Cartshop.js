@@ -22,10 +22,10 @@ function ShoppingCart({
 
       <div className="shoppingCart">
         <div className="header">
-          <h2>Shopping cart</h2>
-          <button className="btn close-btn" onClick={onClose}>
+          <h4>Shopping cart</h4>
+          {/* <button className="btn close-btn" onClick={onClose}>
             <AiFillCloseCircle size={30} />
-          </button>
+          </button> */}
         </div>
         <div className="cart-products">
           {products && products.length === 0 && (
@@ -68,7 +68,7 @@ function ShoppingCart({
           {products && products.length > 0 && (
             <div style={{ margin: "20px" }}>
               <div>Total Cart Price: ₹ {getTotalCartPrice()}.00</div>
-              <Button style={{ margin: "10px",border:"1px solid rgb(217 207 207)",fontWeight:"600" ,background:"rgb(227 227 227)" ,color:"rgb(114 153 42);"}}  href="/checkout">
+              <Button style={{ margin: "15px", borderRadius:"20px" ,fontWeight:"600",background:"#ffbb38" ,color:"#000",opacity:"0.9",padding:"10px"}}  href="/checkout">
                  checkout
               </Button>
             </div>

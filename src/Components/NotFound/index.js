@@ -1,12 +1,13 @@
 import React from 'react';
 import './style.css';
 import NotFoundImg from '../../assets/page-404.png';
-import { Button } from '@mui/material';
+import { Button, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
     return (
-        <section className='notFound'>
+        <Container>
+ <section className='notFound'>
             <div className="container-fluid">
                 <div className='box'>
                     <img src={NotFoundImg} alt='not found'/>
@@ -24,6 +25,8 @@ const NotFound = () => {
                 </div>
             </div>
         </section>
+        </Container>
+       
     )
 }
 

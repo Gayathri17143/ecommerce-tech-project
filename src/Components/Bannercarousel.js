@@ -1,24 +1,17 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { Link } from '@mui/material';
+import { Link ,Container} from '@mui/material';
 import Banner from '../assets/banner.webp';
 import Banner2 from '../assets/macbookbanner.jpg';
 import Banner3 from '../assets/iPhonebanner.jpg';
 const MyCarousel = () => {
     return (
+        <Container>
+ 
         <Carousel>
-            {/* <Carousel.Item>
-                <Link href="/">
-                    <img
-                        className="d-block w-100"
-                        src={Banner}
-                        alt="First slide"
-                    />
-                </Link>
-
-            </Carousel.Item> */}
+            
             <Carousel.Item>
-                <Link href="/">
+                <Link href="/macbooklaptop/mackbookair">
                     <img
                         className="d-block w-100"
                         src={Banner2}
@@ -28,7 +21,7 @@ const MyCarousel = () => {
 
             </Carousel.Item>
             <Carousel.Item>
-                <Link href="/">
+                <Link href="/iphones">
                     <img
                         className="d-block w-100"
                         src={Banner3}
@@ -38,6 +31,7 @@ const MyCarousel = () => {
 
             </Carousel.Item>
         </Carousel>
+        </Container>
     );
 };
 

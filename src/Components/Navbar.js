@@ -24,6 +24,7 @@ import Banner from "../assets/logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import LoginModal from "../Components/LoginModal";
 // import ShoppingCart from "./Cartshop";
 // import { useHistory } from "react-router-dom";
 
@@ -33,52 +34,51 @@ const pages = [
 ];
 // const settings = ['MyProfile', 'Order', 'Whislit', 'Coupons', 'Gift Cards', 'Logout', 'Notification'];
 
-const settings = [
-  {
-    id: 1,
-    name: "My Profile",
-    link: "/myprofile",
-  },
-  {
-    id: 2,
-    name: "Your Orders",
-    link: "/yourorders",
-  },
-  {
-    id: 3,
-    name: "Whislit",
-    link: "/whislit",
-  },
-  {
-    id: 4,
-    name: "Coupons",
-    link: "/coupons",
-  },
-  {
-    id: 5,
-    name: "Gift Cards",
-    link: "/giftcards",
-  },
-  {
-    id: 6,
-    name: "Logout",
-  },
-  // {
-  //     id: 7,
-  //     name: "Notification",
-  //     link: "/notification"
-  // },
-];
+// const settings = [
+//   {
+//     id: 1,
+//     name: "My Profile",
+//     link: "/myprofile",
+//   },
+//   {
+//     id: 2,
+//     name: "Your Orders",
+//     link: "/yourorders",
+//   },
+//   {
+//     id: 3,
+//     name: "Whislit",
+//     link: "/whislit",
+//   },
+//   {
+//     id: 4,
+//     name: "Coupons",
+//     link: "/coupons",
+//   },
+//   {
+//     id: 5,
+//     name: "Gift Cards",
+//     link: "/giftcards",
+//   },
+//   {
+//     id: 6,
+//     name: "Logout",
+//   },
+//   // {
+//   //     id: 7,
+//   //     name: "Notification",
+//   //     link: "/notification"
+//   // },
+// ];
 function ResponsiveAppBar() {
+  const handleOpen = () => setOpen(true);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-  // const [isLoginned, setisLoginned] = React.useState(true);
 
   const token = localStorage.getItem("access_token");
   const isLoginned = !!token;
-  // const navigate = useNavigate();
-  // const navigate = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -105,11 +105,11 @@ function ResponsiveAppBar() {
     // history.push('/login'); // Redirect the user to the login page after logout
     handleCloseUserMenu(); // Close the menu after logout
   };
-  const handleOpen = () => {
-    // localStorage.removeItem('access_token'); // Remove token from local storage
-    // navigate("/UserProfile");
-    // handleCloseUserMenu(); // Close the menu after logout
-  };
+  // const handleOpen = () => {
+  //   // localStorage.removeItem('access_token'); // Remove token from local storage
+  //   // navigate("/UserProfile");
+  //   // handleCloseUserMenu(); // Close the menu after logout
+  // };
 
   const top100Films = [
     { title: "iPhone 13" },
@@ -195,36 +195,7 @@ function ResponsiveAppBar() {
   useEffect(() => {
     localStorage.setItem("shopping-cart", JSON.stringify(productsInCart));
   }, [productsInCart]);
-  // const addProductToCart = (product) => {
-  //   const newProduct = {
-  //     ...product,
-  //     count: 1,
-  //   };
-  //   setProducts([...productsInCart, newProduct]);
-  //   window.location.reload();
-  // };
 
-  // const onQuantityChange = (productId, count) => {
-  //   setProducts((oldState) => {
-  //     const productsIndex = oldState.findIndex((item) => item.id === productId);
-  //     if (productsIndex !== -1) {
-  //       oldState[productsIndex].count = count;
-  //     }
-  //     return [...oldState];
-  //   });
-  // };
-
-  // const onProductRemove = (product) => {
-  //   setProducts((oldState) => {
-  //     const productsIndex = oldState.findIndex(
-  //       (item) => item.id === product.id
-  //     );
-  //     if (productsIndex !== -1) {
-  //       oldState.splice(productsIndex, 1);
-  //     }
-  //     return [...oldState];
-  //   });
-  // };
   return (
     <AppBar position="static" sx={{ background: "none", color: "black" }}>
       <Container maxWidth="xl">
@@ -261,7 +232,7 @@ function ResponsiveAppBar() {
             sx={{ width: 700 }}
             direction="row"
             alignItems="center"
-            gap={3}
+            // gap={3}
           >
             <Autocomplete
               fullWidth
@@ -283,11 +254,7 @@ function ResponsiveAppBar() {
               )}
             />{" "}
             {isLoginned ? (
-              <Button
-                className="btn shopping-cart-btn"
-                href="/shopcart"
-                // onClick={() => setCartVisible(true)}
-              >
+              <Button className="btn shopping-cart-btn" href="/shopcart">
                 <ShoppingCartOutlinedIcon
                   sx={{
                     display: {
@@ -305,14 +272,6 @@ function ResponsiveAppBar() {
                 )}
               </Button>
             ) : null}
-            {/* <ShoppingCart
-              // visibilty={cartsVisibilty}
-              products={productsInCart}
-              count={onQuantityChange}
-              onClose={() => setCartVisible(false)}
-              onQuantityChange={onQuantityChange}
-              onProductRemove={onProductRemove}
-            /> */}
             {isLoginned ? (
               <NotificationsActiveOutlinedIcon
                 sx={{
@@ -341,11 +300,12 @@ function ResponsiveAppBar() {
                             </div>
 
                         </Stack> */}
-            <Dialog open={open}  onClose={handleClose}>
+            {/* <Dialog open={open}  onClose={handleClose}>
               <DialogContent>
                 <LoginForm  closeDialog={handleClose} />
               </DialogContent>
-            </Dialog>
+            </Dialog> */}
+            <LoginModal open={open} onClose={handleClose} />
             <Box sx={{ flexGrow: 0 }}>
               {isLoginned ? (
                 <>
@@ -354,7 +314,7 @@ function ResponsiveAppBar() {
                       <Avatar
                         alt="Gemy Sharp"
                         src="/static/images/avatar/2.jpg"
-                        sx={{ margin: 2 }}
+                        // sx={{ margin: 2 }}
                       />
                     </IconButton>
                   </Tooltip>
@@ -375,46 +335,29 @@ function ResponsiveAppBar() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    {/* {settings.map((setting) => (
-                                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                                <Typography textAlign="center">{setting.name}</Typography>
-                                            </MenuItem>
-                                        ))} */}
-
                     <MenuItem onClick={handleOpen}>
                       <Button href="/profile">My Profile</Button>
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
                       <Button href="/yourorders">Your Orders</Button>
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
                       <Button href="/wishlist">Wishlist</Button>
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
                       <Button href="/coupons">Coupons</Button>
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
                       <Button href="/giftcards">Gift Cards</Button>
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
                     <MenuItem onClick={handleLogout}>
                       <Button>Logout</Button>
-                      {/* <Typography textAlign="center"></Typography> */}
-                      {/* <LogoutIcon sx={{ ml: 1 }} /> */}
                     </MenuItem>
-                    {/* <MenuItem onClick={handleOpen}>  
-                                            <Button href='/notification'>Notification</Button>
-                                            <LogoutIcon sx={{ ml: 1 }} />
-                                        </MenuItem> */}
                   </Menu>
                 </>
               ) : (
-                <Button variant="contained" onClick={handleClickOpen}>
-                  SignUp/Login
+                <Button  sx={{fontWeight:"600"}} onClick={handleOpen}>
+                   Login
                 </Button>
               )}
             </Box>

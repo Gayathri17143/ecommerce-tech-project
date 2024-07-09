@@ -6,8 +6,7 @@
 .css-imxxbk-MuiPaper-root-MuiAppBar-root {
     background-color: #f6f6f6!important;
 }
+ 
 @media(max-width:991px){
-    .d-block {
-        width: 30%;
-    }
+  
 }
