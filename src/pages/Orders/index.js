@@ -33,8 +33,8 @@ function Orders() {
 
   return (
     <Space size={20} direction="vertical">
-      <Typography.Title level={4}>Orders</Typography.Title>
-      <Table bordered
+      <Typography.Title level={4} style={{color:"#e0e0e0"}}>Orders</Typography.Title>
+      <Table bordered style={{background:"#e0e0e0"}}
         loading={loading}
         columns={[
           {

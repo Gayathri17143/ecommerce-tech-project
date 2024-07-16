@@ -5,6 +5,7 @@
 .MuiTableRow-root.MuiTableRow-head > * {
   font-weight: bold !important;
   font-size: 18px;
+  color: #4cceac;
 }
  
 .Table td,

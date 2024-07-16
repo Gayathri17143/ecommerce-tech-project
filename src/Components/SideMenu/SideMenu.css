@@ -1,31 +1,20 @@
-/* .SideMenu {
-    transition: transform 0.3s ease;
-  }
-  
-  .SideMenu.hidden {
-    transform: translateX(-100%);
-  }
-  
-  .SideMenu.visible {
-    transform: translateX(0);
-  } */
+ .menu-label:hover {
+   color: #868dfb !important;
+   /* Your desired hover color */
+ }
 
-  .menu-label {
-    color: #000000 !important; /* Your desired color */
-    font-size: 16px !important; /* Optional: Adjust font size if needed */
-  }
-  
-  .menu-label:hover {
-    color: #868dfb !important; /* Your desired hover color */
-  }
-  
-  .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
-    position: relative;
-    background-color: #f2f0f0;
+ .pro-sidebar .pro-menu>ul>.pro-sub-menu>.pro-inner-list-item {
+  background: none;
 }
-
- 
-  @media (max-width: 768px) {
-   
-  }
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item > div > ul {
+  padding-top: 0px;
   
+}
+ .pro-sidebar .pro-menu .pro-menu-item.pro-sub-menu>.pro-inner-item>.pro-arrow-wrapper {
+   position: absolute;
+   right: 80px;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ @media (max-width: 768px) {}

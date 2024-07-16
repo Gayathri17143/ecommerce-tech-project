@@ -7,24 +7,31 @@ const Footer = () => {
   return (
     <>
       {/* <Container> */}
-
+      <div
+        className=""
+        style={{
+          borderBottom: "1px solid #ffbb38",
+          width: "50%",
+          margin: "0 auto",
+        }}
+      ></div>
       <div className="foot-container pad">
-        <div className="foot-item">
-          <ul className="menu">
+      <div className="foot-item">
+          <ul className="icons">
             <li>
-              <a>
-                <i class="fa-regular fa-phone">
-                  <div className="foot-text">123456789</div>
-                </i>
-                <i class="fa-regular fa-location-dot">
-                  <div className="foot-text">
-                    25 West 21th Street,Chennai,India.
-                  </div>
-                </i>
-                <i class="fa-regular fa-envelope">
-                  <div className="foot-text">info@techconnect.com</div>
-                </i>
-              </a>
+              <span className="bold">
+                Follow Us:
+                <a>
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </span>
+              <div className="foot-text2">
+                © 2024 TechConnect Theme. All Rights Reserved.
+              </div>
+              <img src={logo} alt="logo" style={{marginTop:"20px"}}></img>
             </li>
           </ul>
         </div>
@@ -82,39 +89,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div
-        className=""
-        style={{
-          borderBottom: "1px solid #ffbb38",
-          width: "50%",
-          margin: "0 auto",
-        }}
-      ></div>
-      <div className="foot-container pad">
-        <div className="foot-item">
-          <ul className="icons">
-            <li>
-              <span className="bold">
-                Follow Us:
-                <a>
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-instagram"></i>
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-youtube"></i>
-                </a>
-              </span>
-              <div className="foot-text2">
-                © 2024 TechConnect Theme. All Rights Reserved.
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className="foot-item"></div>
-        <div className="foot-item"></div>
-        <div className="foot-item">
-          <img src={logo} alt="logo"></img>
-        </div>
-      </div>
+     
+      
       {/* </Container> */}
     </>
   );

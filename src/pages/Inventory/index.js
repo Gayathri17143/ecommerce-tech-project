@@ -1,6 +1,7 @@
-import { Avatar, Rate, Space, Table, Typography } from "antd";
+import { Avatar, Col, Rate, Space, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { getInventory } from "../../API";
+import { color } from "framer-motion";
 
 function Inventory() {
   const [loading, setLoading] = useState(false);
@@ -15,8 +16,8 @@ function Inventory() {
   }, []);
 
   return (
-    <Space size={20} direction="vertical">
-      <Typography.Title level={4}>Inventory</Typography.Title>
+    <Space size={20} direction="vertical" style={{marginTop:"50px"}}>
+      <Typography.Title level={4} style={{color:"#e0e0e0"}}>Inventory</Typography.Title>
       <Table
         loading={loading}
         columns={[
@@ -58,8 +59,9 @@ function Inventory() {
           },
         ]}
         dataSource={dataSource}
-        pagination={{
+        pagination={{  
           pageSize: 5,
+           
         }}
       ></Table>
     </Space>

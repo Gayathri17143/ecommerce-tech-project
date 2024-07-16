@@ -49,7 +49,7 @@ const PincodeChecker = () => {
   };
 
   return (
-    <div style={{ padding:"10px" }}>
+    <div style={{ padding:"10px",display:"flex" }}>
       <span>
         {" "}
         Delivery Options:{" "}

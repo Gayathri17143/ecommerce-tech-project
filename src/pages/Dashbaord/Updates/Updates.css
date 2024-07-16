@@ -1,13 +1,14 @@
 
 .Updates{
     width: 110%;
-    background: white;
+    background: #1f2a40;
     border-radius: 0.7rem;
     padding: 1rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
     font-size: 13px;
+    color: #e0e0e0;
 }
 
 .update{

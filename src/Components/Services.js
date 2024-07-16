@@ -41,14 +41,6 @@ const Wrapper = () => {
                     <p className='mb-0'>Shop with an Expert</p>
                   </Col>
                 </div>
-                {/* <div className='d-flex align-items-center row'>
-                  <Col>
-                <img src={ServiceImg4} alt='services'/></Col>
-                  <Col>
-                    <h6>Affordable Prices</h6>
-                    <p className='mb-0'>Get Factory Default Price</p>
-                  </Col>
-                </div> */}
                 <div className='d-flex align-items-center row'>
                   <Col lg={3}>
                 <img src={ServiceImg5} alt='services'/></Col>

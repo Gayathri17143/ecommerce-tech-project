@@ -94,7 +94,7 @@ function ProductScreen() {
       </Link> */}
 
       <div>
-        <Row style={{ background: "#fff", padding: "30px" }}>
+        <Row style={{ background: "#fff", padding: "30px" ,width:"500px"}}>
           {/* <Col md={6}>
             <Image src={product.image} alt={product.name} fluid />
 

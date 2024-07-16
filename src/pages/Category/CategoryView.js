@@ -28,7 +28,7 @@ function UserView() {
 
     return (
         <>
-            <div>CategoryView - {params.id}</div>
+            <div style={{marginTop:"20px",padding:"2%"}}>CategoryView - {params.id}</div>
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">CategoryView</h6>

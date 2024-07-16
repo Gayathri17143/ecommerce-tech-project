@@ -45,9 +45,9 @@ h6 {
 
 @media(max-width:991px) {
   .d-flex {
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center !important; */
+    align-items: center !important;
     display: flex !important;
-    flex-wrap: wrap;
+    flex-wrap: wrap!important;
   }
 }

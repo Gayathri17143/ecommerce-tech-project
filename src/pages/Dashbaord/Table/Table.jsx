@@ -27,15 +27,15 @@ const makeStyle=(status)=>{
   if(status === 'Approved')
   {
     return {
-      background: 'rgb(145 254 159 / 47%)',
-      color: 'green',
+      background: '#008000a6',
+      // color: 'green',
     }
   }
   else if(status === 'Pending')
   {
     return{
-      background: '#ffadad8f',
-      color: 'red',
+      background: '#ff0000b8',
+      // color: 'red',
     }
   }
   else{
@@ -49,10 +49,10 @@ const makeStyle=(status)=>{
 export default function BasicTable() {
   return (
       <div className="Table" style={{marginTop:"50px"}}>
-      <h3 style={{margin:"20px"}}>Recent Orders</h3>
+      <h3 style={{margin:"20px",color:"#e0e0e0"}}>Recent Orders</h3>
         <TableContainer 
           component={Paper}
-          style={{ boxShadow: "0px 13px 20px 0px #80808029",padding:"20px" }}
+          style={{ boxShadow: "0px 13px 20px 0px #80808029",padding:"20px" ,background:"#1f2a40" }}
         >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead  >
@@ -64,18 +64,18 @@ export default function BasicTable() {
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
-            <TableBody style={{ color: "white" }}>
+            <TableBody >
               {rows.map((row) => (
-                <TableRow
+                <TableRow 
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
+                  <TableCell style={{ color: "#cfcecf" }} component="th" scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell align="left">{row.trackingId}</TableCell>
-                  <TableCell align="left">{row.date}</TableCell>
-                  <TableCell align="left">
+                  <TableCell style={{ color: "#cfcecf" }} align="left">{row.trackingId}</TableCell>
+                  <TableCell style={{ color: "#cfcecf" }} align="left">{row.date}</TableCell>
+                  <TableCell style={{ color: "#cfcecf" }} align="left">
                     <span className="status" style={makeStyle(row.status)}>{row.status}</span>
                   </TableCell>
                   {/* <TableCell align="left" className="Details">Details</TableCell> */}

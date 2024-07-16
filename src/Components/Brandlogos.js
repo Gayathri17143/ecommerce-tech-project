@@ -23,38 +23,38 @@ const Gallery = () => {
             <div className='col-12'>
               
               <div className='marquee-inner-wrapper card-wrapper'>
-              <Marquee className='d-flex' style={{background:" #bae6ff"  }}>
+              <Marquee   style={{background:" #bae6ff"  }}>
                 <div className='  w-75'>
-                <a href="/" target='_blank'>
-                  <img src={Image1} alt='brand'  /></a>
+                <a href="/iphones" target='_blank'>
+                  <img src={Image1} alt='brand' width={"100%"} /></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image2} alt='brand' /></a>
+                  <img src={Image2} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image3} alt='brand' /></a>
+                  <img src={Image3} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image4} alt='brand' /></a>
+                  <img src={Image4} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image5} alt='brand' /></a>
+                  <img src={Image5} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image6} alt='brand' /></a>
+                  <img src={Image6} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image7} alt='brand' /></a>
+                  <img src={Image7} alt='brand' width={"100%"}/></a>
                 </div>
                 <div className='  w-75'>
                 <a href="/" target='_blank'>
-                  <img src={Image8} alt='brand' /></a>
+                  <img src={Image8} alt='brand' width={"100%"}/></a>
                 </div>
               </Marquee>
               </div>

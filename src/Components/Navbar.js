@@ -15,11 +15,11 @@ import Tooltip from "@mui/material/Tooltip";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-import DialogContent from "@mui/material/DialogContent";
+ 
 import Autocomplete from "@mui/material/Autocomplete";
 import "./Navbar.css";
 import Dialog from "@mui/material/Dialog";
-import LoginForm from "./LoginForm";
+ 
 import Banner from "../assets/logo.png";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";

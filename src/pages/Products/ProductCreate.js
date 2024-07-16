@@ -91,10 +91,10 @@ function UserCreate() {
   };
 
   return (
-    <div className='container'>
-      <form onSubmit={myFormik.handleSubmit}>
+    <div className='container' style={{background:"#1f2a40",marginTop:"30px"}}>
+      <form onSubmit={myFormik.handleSubmit} >
         <div className='row'>
-          <div className="col-lg-6">
+          <div className="col-lg-6" style={{margin:"10px"}}>
             <label>Product Name</label>
             <input
               name='productname'
@@ -106,7 +106,7 @@ function UserCreate() {
             <span style={{ color: "red" }}>{myFormik.errors.productname}</span>
           </div>
 
-          <div className='col-lg-4'>
+          <div className='col-lg-4' style={{margin:"10px"}}>
             <label>Category</label>
             <select
               name='category'
@@ -125,7 +125,7 @@ function UserCreate() {
             <span style={{ color: "red" }}>{myFormik.errors.category}</span>
           </div>
 
-          <div className='col-lg-4'>
+          <div className='col-lg-4' style={{margin:"10px"}}>
             <label>Colors</label>
             <select
               name='colors'
@@ -144,7 +144,7 @@ function UserCreate() {
             <span style={{ color: "red" }}>{myFormik.errors.colors}</span>
           </div>
 
-          <div className='col-lg-4'>
+          <div className='col-lg-4' style={{margin:"10px"}}>
             <label>Brand</label>
             <select
               name='brand'
@@ -163,7 +163,7 @@ function UserCreate() {
             <span style={{ color: "red" }}>{myFormik.errors.brand}</span>
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-lg-6" style={{margin:"10px"}}>
             <label>Price</label>
             <input
               name='price'

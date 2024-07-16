@@ -1,3 +1,6 @@
+.rfm-marquee{
+    min-width: 0% ;
+}
  .product-details{
     background: #fff;
     padding: 30px;
@@ -295,6 +298,11 @@ opacity: 0;
 
 ul{
     padding-left: 0rem;
+}
+
+.variant-selector {
+    display: flex;
+    gap: 10px;
 }
 
 @media(max-width:1000px){

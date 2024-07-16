@@ -12,6 +12,8 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
@@ -52,7 +54,9 @@ function AppHeader() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "30px",
+        padding: "10px",
+        borderBottom:"none",
+        // background:"#141b2d",
       }}
     >
       <div style={{ display: "flex", alignItems: "center"  }}>
@@ -74,7 +78,7 @@ function AppHeader() {
           Admin Dashboard
         </Typography.Title> */}
       </div>
-      <Box display="flex" justifyContent="space-between" p={2}>
+      <Box display="flex" justifyContent="space-between" p={2} gap={'20px'}>
       {/* SEARCH BAR */}
       <Box
         display="flex"
@@ -93,21 +97,34 @@ function AppHeader() {
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon />
           ) : (
-            <LightModeOutlinedIcon />
+            <LightModeOutlinedIcon  style={{ color:"#e0e0e0" }}/>
           )}
         </IconButton>
-        <IconButton>
-          <NotificationsOutlinedIcon />
+        <IconButton count={comments.length} dot >
+          <MailOutlineIcon  style={{ color:"#e0e0e0" }}
+            onClick={() => {
+              setCommentsOpen(true);
+            }}/>
+            
         </IconButton>
-        <IconButton>
+        <IconButton count={orders.length}>
+          <NotificationsOutlinedIcon  style={{ color:"#e0e0e0" }}
+            onClick={() => {
+              setNotificationsOpen(true);
+            }}/>
+        </IconButton>
+        {/* <IconButton>
           <SettingsOutlinedIcon />
+        </IconButton> */}
+        <IconButton>
+          <PersonOutlinedIcon   style={{ color:"#e0e0e0" }}/>
         </IconButton>
         <IconButton>
-          <PersonOutlinedIcon />
+          <ExitToAppIcon  style={{ color:"#e0e0e0" }}/>
         </IconButton>
       </Box>
     </Box>
-      <Space style={{ gap:"20px"}}>
+      {/* <Space style={{ gap:"20px"}}>
         <Badge count={comments.length} dot  >
           <MailOutlined  
             style={{ fontSize: 24 ,color:"#575757" }}
@@ -127,7 +144,7 @@ function AppHeader() {
         <Badge>
           <LogoutOutlined onClick={handleLogout} style={{ fontSize: 24,color:"#575757" }}/>
         </Badge>
-      </Space>
+      </Space> */}
       <Drawer
         title="Comments"
         open={commentsOpen}

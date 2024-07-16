@@ -64,7 +64,7 @@ const OrderHistory = () => {
       {orderHistory.length === 0 ? (
         <p>No orders found.</p>
       ) : (
-        <div>
+        <div style={{width:"90%"}}>
           {orderHistory.map((order) => (
             <div key={order.id} className="order">
               <h5>Order ID: {order.id}</h5>

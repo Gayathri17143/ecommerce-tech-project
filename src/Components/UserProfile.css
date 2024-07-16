@@ -32,7 +32,7 @@ button {
   background-color: #ffbb38;
   color: #000;
   border: none;
-  border-radius: 30px !important;
+  /* border-radius: 30px !important; */
   cursor: pointer;
   margin: 20px auto; /* Center the button */
   display: block;
@@ -56,7 +56,7 @@ button:hover {
 }
 
 /* Header styling */
-h3 {
+.profile h4 {
   text-align: center;
   margin-bottom: 20px;
 }

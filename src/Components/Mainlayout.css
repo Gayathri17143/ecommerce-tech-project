@@ -47,7 +47,7 @@
 }
 
 .App-header {
-    background-color: #282c34;
+    /* background-color: #282c34; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,7 @@
     flex: 1;
     /* justify-content: flex-start; */
     /* align-items: flex-start; */
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 
 .SideMenu {

@@ -43,10 +43,10 @@ const makeStyle = (status) => {
 export default function BasicTable() {
   return (
     <div className="Table" style={{ marginTop: "50px" }}>
-      <h3 style={{ margin: "20px" }}>Recent Orders</h3>
-      <TableContainer 
+      <h3 style={{  color:"#e0e0e0",backgroundColor: 'none' }}>Recent Orders</h3>
+      <TableContainer  
         component={Paper}
-        style={{ boxShadow: "0px 13px 20px 0px #80808029", padding: "20px" }}
+        style={{ boxShadow: "0px 13px 20px 0px #80808029", padding: "20px",background: '#1f2a40' }}
       >
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

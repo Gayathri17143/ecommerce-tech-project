@@ -34,11 +34,11 @@ function App() {
   };
 
   return (
-    <Container style={{ padding: "30px" }} className="profile">
+    <Container  className="profile">
       <form onSubmit={handleSubmit}>
-        <h3 style={{ padding: "20px", color: "purple", textAlign: "center" }}>
+        <h4 style={{ padding: "20px", color: "purple", textAlign: "center" }}>
           Personal Information
-        </h3>
+        </h4>
         <div className="form-group">
           <label>FirstName:</label>
           <input

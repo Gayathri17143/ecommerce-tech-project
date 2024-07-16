@@ -7,7 +7,7 @@ import RightSide from "../RigtSide/RightSide";
 const MainDash = () => {
   return (
     <div className="" style={{width:"1200px" }}  >
-      <h3>Dashboard</h3>
+      <h3 style={{color:"#e0e0e0"}}>Dashboard</h3>
       <Row  >
         <Col>
         <div className="mar"><Cards /></div> 

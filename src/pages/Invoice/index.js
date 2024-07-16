@@ -43,8 +43,8 @@ const InvoicePage = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>
+    <Container style={{marginTop:"30px"}}>
+      <Typography variant="h4" gutterBottom sx={{padding:"20px"}}>
         Create Invoice
       </Typography>
       <Table>

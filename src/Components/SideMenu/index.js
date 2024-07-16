@@ -10,19 +10,49 @@ import {
   GlobalOutlined,
   BarChartOutlined,
   TransactionOutlined,
-  PrinterOutlined ,
-  LogoutOutlined ,
+  PrinterOutlined,
+  LogoutOutlined,
   InboxOutlined,
 } from "@ant-design/icons";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import logo from "../../assets/user.png";
 import { tokens } from "../../theme";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Box, IconButton, styled, Typography, useTheme } from "@mui/material";
+
+import { Box, IconButton, Typography, useTheme, Link } from "@mui/material";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
-import { Input } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideMenu.css";
+
+const Item = ({ title, to, icon, selected, setSelected }) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    <MenuItem
+      active={selected === title}
+      style={{
+        color: colors.grey[100],
+      }}
+      onClick={() => setSelected(title)}
+      icon={icon}
+    >
+      <Typography>{title}</Typography>
+      <Link to={to} />
+    </MenuItem>
+  );
+};
+
 function SideMenu() {
   const location = useLocation();
   const [selectedKeys, setSelectedKeys] = useState("/");
@@ -49,28 +79,17 @@ function SideMenu() {
     handleFilterChange();
   }, [search]);
 
-  const handleOpenChange = (keys) => {
-    setOpenKeys(keys);
-  };
- 
-
-  const handleLogout = () => {
-    // Clear any stored authentication tokens or user data
-    localStorage.removeItem('authToken');
-    // Redirect to login page
-    navigate.push('/login');
-  };
   const menuItems = [
     {
       label: "Dashboard",
-      icon: <AppstoreOutlined style={{ color: '#626262', fontSize: '24px' }} />,
+      icon: <AppstoreOutlined style={{ color: '#b3adb3', fontSize: '24px',background :"none!important" }} />,
       key: "/dashboard",
     },
     {
       label: "Products",
       key: "products",
-      icon: <InboxOutlined style={{ color: '#626262', fontSize: '24px' }} />,
-      children: [  
+      icon: <InboxOutlined style={{ color: '#b3adb3', fontSize: '24px' }} />,
+      children: [
         { label: "Product List", key: "/product-list" },
         { label: "Categories", key: "/category-list" },
         { label: "Brands", key: "/brands" },
@@ -80,7 +99,7 @@ function SideMenu() {
     {
       label: "Orders",
       key: "/orders",
-      icon: <ShoppingCartOutlined style={{ color: '#626262', fontSize: '24px' }} />,
+      icon: <ShoppingCartOutlined style={{ color: '#b3adb3', fontSize: '24px' }} />,
       // children: [
       //   { label: "All orders", key: "/orders"  },
       //   { label: "Pending orders", key: "/pending-orders" },
@@ -92,7 +111,7 @@ function SideMenu() {
     {
       label: "Customers",
       key: "customers",
-      icon: <TeamOutlined style={{ color: '#626262', fontSize: '24px' }} />,
+      icon: <TeamOutlined style={{ color: '#b3adb3', fontSize: '24px' }} />,
       children: [
         { label: "Customer List", key: "/customers" },
         { label: "Customer Groups", key: "/customer-groups" },
@@ -102,7 +121,7 @@ function SideMenu() {
     {
       label: "Inventory",
       key: "/inventory",
-      icon: <ShopOutlined style={{ color: '#626262', fontSize: '24px' }} />,
+      icon: <ShopOutlined style={{ color: '#b3adb3', fontSize: '24px' }} />,
       // children: [
       //   { label: "Stock Management", key: "/inventory" },
       //   { label: "Low Stock Alerts", key: "/low-stock-alerts" },
@@ -111,12 +130,12 @@ function SideMenu() {
     {
       label: "Users",
       key: "/user-list",
-      icon: <UserOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
+      icon: <UserOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
     },
     {
       label: "Statistics",
       key: "statistics",
-      icon: <BarChartOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
+      icon: <BarChartOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
       children: [
         { label: "Sales Reports", key: "/sales-reports" },
         { label: "Customer Reports", key: "/customer-reports" },
@@ -126,27 +145,27 @@ function SideMenu() {
     {
       label: "Transactions",
       key: "/transactions",
-      icon: <TransactionOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
+      icon: <TransactionOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
     },
     {
       label: "Invoice",
       key: "/invoice",
-      icon: <PrinterOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
+      icon: <PrinterOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
     },
-    {
-      label: "Sellers",
-      key: "/sellers",
-      icon: <GlobalOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
-    },
-    {
-      label: "Hot Offers",
-      key: "/offers",
-      icon: <TagOutlined style={{ color: '#626262', fontSize: '24px' }}/>,
-    },    
+    // {
+    //   label: "Sellers",
+    //   key: "/sellers",
+    //   icon: <GlobalOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
+    // },
+    // {
+    //   label: "Hot Offers",
+    //   key: "/offers",
+    //   icon: <TagOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/>,
+    // },
     {
       label: "Settings",
       key: "settings",
-      icon: <SettingOutlined style={{ color: '#626262', fontSize: '24px' }}/> , 
+      icon: <SettingOutlined style={{ color: '#b3adb3', fontSize: '24px' }}/> ,
       children: [
         { label: "General Settings", key: "/Settings" },
         { label: "Payment Methods", key: "/payment-methods" },
@@ -154,7 +173,7 @@ function SideMenu() {
         { label: "Tax Settings", key: "/tax-settings" },
       ],
     },
-     
+
   ];
 
   return (
@@ -178,7 +197,7 @@ function SideMenu() {
         },
       }}
     >
-      <ProSidebar collapsed={isCollapsed} >
+      <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
@@ -196,33 +215,44 @@ function SideMenu() {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography  variant="h5" color={colors.grey[100]}>Dashboard</Typography>
+                <Typography variant="h5" color={colors.grey[100]}>
+                  Dashboard
+                </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
             )}
           </MenuItem>
-        </Menu>
-        {!isCollapsed && (
-          <Box mb="25px">
-            <Box display="flex" justifyContent="center" alignItems="center">
-              <img
-                alt="profile-user"
-               width="100px"
+          {!isCollapsed && (
+            <Box mb="25px">
+              <Box display="flex" justifyContent="center" alignItems="center">
+                <img
+                  alt="profile-user"
+                  width="100px"
                   height="100px"
-                src={logo}
-                style={{ cursor: "pointer", borderRadius: "50%" }}
-              />
+                  src={logo}
+                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                />
+              </Box>
+              <Box textAlign="center">
+                <Typography
+                  variant="h5"
+                  fontWeight={600}
+                  color={colors.grey[100]}
+                  sx={{ m: "10px 0 0 0" }}
+                >
+                  Rosey
+                </Typography>
+                <Typography color={colors.greenAccent[500]}>
+                  VP Fancy Admin
+                </Typography>
+              </Box>
             </Box>
-            <Box textAlign="center">
-              <Typography  variant="h5" fontWeight={600} color={colors.grey[100]} sx={{ m: "10px 0 0 0" }}>
-               Rosey
-              </Typography>
-              <Typography   color={colors.greenAccent[500]}>VP Fancy Admin</Typography>
-            </Box>
-          </Box>
-        )}
+          )}
+
+          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+            
         <Menu iconShape="circle"  >
           {menuItems.map((item) =>
             item.children ? (
@@ -244,6 +274,8 @@ function SideMenu() {
               </MenuItem>
             )
           )}
+        </Menu>
+        </Box>
         </Menu>
       </ProSidebar>
     </Box>

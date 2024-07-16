@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./TrendingProducts.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,7 +9,7 @@ import Banner3 from "../assets/smart.png";
 import Banner4 from "../assets/powerbank.png";
 import Banner5 from "../assets/webcam.png";
 import Banner0 from "../assets/ads-banner.png";
-import { Container ,Link} from "@mui/material";
+import { Container, Link } from "@mui/material";
 const SimpleCarousel = () => {
   const settings = {
     // dots: true,
@@ -49,8 +49,12 @@ const SimpleCarousel = () => {
 
   return (
     <Container>
-         <Link href="/wireless">
-      <img className="" src={Banner0} alt=" slide" style={{padding:"3%"}}  /></Link>
+      <div >
+        <Link href="/wireless">
+          <img className="display" src={Banner0} alt=" slide" />
+        </Link>
+      </div>
+
       <div className="main-title">
         <h3 className="title">Trending Gadgets</h3>
         <Slider {...settings} style={{ padding: "20px" }}>

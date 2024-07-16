@@ -1,3 +1,8 @@
+.display {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
 .carousel-container {
     position: relative;
     width: 100%;
@@ -15,7 +20,7 @@
     max-width: 100%;
     height: auto;
   }
-  
+
   .arrow {
     position: absolute;
     top: 50%;

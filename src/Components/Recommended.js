@@ -12,7 +12,7 @@ export const MobRecommendedFilter = ({ handleFilterChange }) => {
   ];
 
   return (
-    <div className="recommended-flex" style={{ padding: "30px", textAlign: "right" }}>
+    <div className="recommended-flex" style={{ padding: "30px", textAlign: "right" ,display:"flex",justifyContent:"center",alignItems:"center"}}>
       {filters.map((filter, index) => (
         <Button key={index} onClickHandler={() => handleFilterChange(filter.value)} title={filter.title} />
       ))}

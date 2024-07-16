@@ -105,8 +105,9 @@ function UserEdit() {
 
   return (
     <>
-      <h3>Product Edit - Id : {params.id}</h3>
-      <div className="container">
+
+      <h3 style={{ marginTop:"30px"}}>Product Edit - Id : {params.id}</h3>
+      <div className="container" style={{background:"#1f2a40" }}>
         <form onSubmit={myFormik.handleSubmit}>
           <div className="row">
             <div className="col-lg-6">
